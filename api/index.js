@@ -81,7 +81,7 @@ module.exports = async function handler(req, res) {
 // Each ballot is stored as its own blob: oscars2026/ballot-{id}.json
 // This avoids concurrent-write race conditions.
 async function handleSubmitBallot(req, res) {
-  const { name, handle, email, picks } = req.body || {};
+  const { name, handle, platform, picks } = req.body || {};
   if (!name || !handle || !picks) {
     return res.status(400).json({ error: 'name, handle, and picks are required' });
   }
@@ -91,7 +91,7 @@ async function handleSubmitBallot(req, res) {
     id,
     name: String(name).slice(0, 100),
     handle: String(handle).slice(0, 50),
-    email: String(email || '').slice(0, 200),
+    platform: String(platform || 'other').slice(0, 20),
     picks,
     submittedAt: new Date().toISOString(),
   };
@@ -121,6 +121,7 @@ async function handleLeaderboard(req, res) {
       id: b.id,
       name: b.name,
       handle: b.handle,
+      platform: b.platform || 'other',
       picks: b.picks || {},
       submittedAt: b.submittedAt || '',
     }))
