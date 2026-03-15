@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>#OscarsSoWhite 2026 Ballot — April Reign</title>
+  <meta name="description" content="Cast your ballot for the 98th Oscars. Curated by April Reign, creator of #OscarsSoWhite. Ten years of changing Hollywood.">
+  <meta property="og:title" content="#OscarsSoWhite 2026 Ballot">
+  <meta property="og:description" content="Cast your ballot for the 98th Oscars. Celebrate the historic nominations. Curated by April Reign.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://oscars.reignofapril.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="#OscarsSoWhite 2026 Ballot by April Reign">
+  <meta name="twitter:description" content="Cast your 98th Oscars ballot. Learn which nominations are making history. Created by @ReignOfApril.">
+  <meta name="twitter:creator" content="@ReignOfApril">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --bg: #080808;
+      --bg-card: #111111;
+      --bg-card-hover: #1a1a1a;
+      --border: #222222;
+      --border-bright: #333333;
+      --gold: #C9A227;
+      --gold-bright: #e8c347;
+      --gold-dim: #8a6e1a;
+      --gold-bg: rgba(201,162,39,0.07);
+      --white: #ffffff;
+      --text-primary: #eeeeee;
+      --text-secondary: #999999;
+      --text-muted: #555555;
+      --red: #e53935;
+      --green: #4caf50;
+
+      /* Badge backgrounds */
+      --b-black: #1e0a3c;
+      --b-black-t: #c9a8ff;
+      --b-women: #3d0022;
+      --b-women-t: #ffb3d9;
+      --b-latino: #3d1a00;
+      --b-latino-t: #ffb366;
+      --b-asian: #002828;
+      --b-asian-t: #66e6e6;
+      --b-indigenous: #2d1f00;
+      --b-indigenous-t: #ffd966;
+      --b-lgbtq: #220030;
+      --b-lgbtq-t: #df80ff;
+      --b-intl: #00082a;
+      --b-intl-t: #80aaff;
+      --b-immigrant: #001a00;
+      --b-immigrant-t: #80d980;
+      --b-faith: #220000;
+      --b-faith-t: #ff9999;
+      --b-neuro: #001414;
+      --b-neuro-t: #a0e8e8;
+
+      --selected-border: var(--gold);
+      --selected-bg: rgba(201,162,39,0.09);
+      --selected-glow: 0 0 0 2px var(--gold), 0 0 16px rgba(201,162,39,0.25);
+      --r: 10px;
+      --r-sm: 7px;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; }
+
+    /* ===== PAGES ===== */
+    .page { display: none; min-height: 100vh; }
+    .page.active { display: block; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,8,8,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px; font-weight: 900; color: var(--gold); white-space: nowrap;
+    }
+    .nav-tabs { display: flex; gap: 4px; }
+    .nav-tab {
+      background: transparent; border: 1px solid var(--border);
+      color: var(--text-secondary); padding: 7px 14px; border-radius: 20px;
+      cursor: pointer; font-size: 13px; font-family: 'Inter', sans-serif;
+      font-weight: 500; transition: all 0.2s; white-space: nowrap;
+    }
+    .nav-tab:hover { color: var(--white); border-color: var(--border-bright); }
+    .nav-tab.active { background: var(--gold); border-color: var(--gold); color: #000; font-weight: 700; }
+
+    /* ===== PROGRESS ===== */
+    .progress-bar {
+      background: var(--bg-card); border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+    }
+    .progress-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .progress-label { font-size: 12px; color: var(--text-secondary); white-space: nowrap; min-width: 110px; }
+    .progress-track { flex: 1; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      border-radius: 3px; transition: width 0.3s ease; width: 0%;
+    }
+
+    /* ===== LANDING HERO ===== */
+    .landing-hero {
+      background: radial-gradient(ellipse at center top, rgba(201,162,39,0.08) 0%, transparent 60%);
+      padding: 80px 20px 64px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .landing-eyebrow {
+      font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px; font-weight: 600;
+    }
+    .landing-title {
+      font-size: clamp(60px, 12vw, 108px);
+      font-weight: 900; color: var(--gold); line-height: 0.95;
+      margin-bottom: 20px;
+      text-shadow: 0 0 80px rgba(201,162,39,0.2);
+      letter-spacing: -2px;
+    }
+    .landing-byline {
+      font-size: clamp(15px, 2.5vw, 18px);
+      color: var(--text-secondary); font-style: italic; margin-bottom: 12px;
+    }
+    .landing-years {
+      font-size: 13px; color: var(--text-muted); letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 44px;
+    }
+    .landing-cta-wrap { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: linear-gradient(135deg, #8a6e1a, var(--gold));
+      color: #000; font-weight: 700; font-size: 17px;
+      padding: 15px 36px; border-radius: 50px;
+      border: none; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s; letter-spacing: 0.3px;
+      display: inline-block;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,162,39,0.4); }
+    .btn-secondary {
+      background: transparent; border: 1px solid var(--border-bright);
+      color: var(--text-secondary); font-size: 15px; padding: 14px 28px;
+      border-radius: 50px; cursor: pointer; font-family: 'Inter', sans-serif;
+      font-weight: 500; transition: all 0.2s;
+    }
+    .btn-secondary:hover { color: var(--white); border-color: var(--text-muted); }
+
+    /* ===== LANDING CONTENT ===== */
+    .section-block { padding: 56px 0; border-bottom: 1px solid var(--border); }
+    .section-block:last-child { border-bottom: none; }
+    .section-eyebrow {
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold-dim); font-weight: 700; margin-bottom: 10px;
+    }
+    .section-heading {
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 700; color: var(--white); margin-bottom: 18px;
+    }
+    .section-text { font-size: 17px; color: var(--text-secondary); line-height: 1.8; max-width: 740px; }
+    .section-text + .section-text { margin-top: 14px; }
+
+    .facts-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 14px; margin-top: 32px;
+    }
+    .fact-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-left: 3px solid var(--gold-dim);
+      border-radius: var(--r); padding: 18px 20px;
+      transition: border-left-color 0.2s;
+    }
+    .fact-card:hover { border-left-color: var(--gold); }
+    .fact-icon { font-size: 22px; margin-bottom: 8px; }
+    .fact-text { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+    .fact-text strong { color: var(--text-primary); font-weight: 600; }
+    .fact-hl { font-size: 12px; color: var(--gold); font-weight: 600; margin-top: 8px; font-style: italic; }
+
+    .quote-block {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-left: 4px solid var(--gold); border-radius: var(--r);
+      padding: 28px 32px; margin-top: 32px;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 3vw, 23px); font-style: italic;
+      color: var(--text-primary); line-height: 1.55;
+    }
+    .quote-attr { margin-top: 12px; font-size: 13px; color: var(--gold); font-weight: 600; }
+
+    /* ===== FORM ===== */
+    .form-section { padding: 64px 20px; }
+    .form-card {
+      background: var(--bg-card); border: 1px solid var(--border-bright);
+      border-radius: var(--r); padding: 40px; max-width: 480px; margin: 0 auto;
+    }
+    .form-title { font-size: 26px; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+    .form-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block; font-size: 11px; font-weight: 700;
+      color: var(--text-secondary); letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 7px;
+    }
+    .form-input {
+      width: 100%; background: var(--bg); border: 1px solid var(--border-bright);
+      color: var(--text-primary); padding: 13px 15px; border-radius: var(--r-sm);
+      font-size: 16px; font-family: 'Inter', sans-serif; transition: border-color 0.2s;
+      -webkit-appearance: none; appearance: none;
+    }
+    .form-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,162,39,0.12); }
+    .form-input::placeholder { color: var(--text-muted); }
+    .form-submit {
+      width: 100%; background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+      color: #000; border: none; padding: 15px; border-radius: var(--r-sm);
+      font-size: 16px; font-weight: 700; font-family: 'Inter', sans-serif;
+      cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px; margin-top: 6px;
+    }
+    .form-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,162,39,0.35); }
+    .form-submit:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+    .form-note { font-size: 12px; color: var(--text-muted); margin-top: 14px; text-align: center; line-height: 1.5; }
+
+    /* ===== BALLOT PAGE ===== */
+    .ballot-page { padding-bottom: 110px; }
+
+    .category-section { padding: 36px 0; border-bottom: 1px solid var(--border); }
+    .category-section:last-child { border-bottom: none; }
+
+    .category-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
+    }
+    .cat-num { font-size: 11px; color: var(--text-muted); font-weight: 700; min-width: 22px; }
+    .cat-name { font-size: clamp(17px, 2.5vw, 22px); font-weight: 700; color: var(--white); }
+    .cat-new {
+      font-size: 9px; background: var(--gold); color: #000;
+      padding: 2px 7px; border-radius: 8px; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .cat-check {
+      margin-left: auto; font-size: 12px;
+      color: var(--text-muted); transition: color 0.2s;
+    }
+    .cat-check.picked { color: var(--gold); }
+
+    .nominees-grid-5 {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
+    }
+    .nominees-grid-2 {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+    }
+    @media (max-width: 900px) {
+      .nominees-grid-5 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .nominees-grid-5 { grid-template-columns: repeat(2, 1fr); }
+      .nominees-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* ===== NOMINEE CARD ===== */
+    .nominee-card {
+      background: var(--bg-card); border: 2px solid var(--border);
+      border-radius: var(--r); padding: 14px 13px;
+      cursor: pointer; transition: border-color 0.15s, background 0.15s;
+      position: relative; user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nominee-card:hover:not(.locked):not(.selected) {
+      background: var(--bg-card-hover); border-color: var(--border-bright);
+    }
+    .nominee-card.selected {
+      border-color: var(--selected-border);
+      background: var(--selected-bg);
+      box-shadow: var(--selected-glow);
+    }
+    .nominee-card.locked { cursor: default; }
+    .nominee-card.winner-correct { border-color: #4caf50 !important; background: rgba(76,175,80,0.08) !important; }
+    .nominee-card.winner-wrong { border-color: var(--red) !important; opacity: 0.6; }
+
+    .nom-check {
+      position: absolute; top: 9px; right: 9px;
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 2px solid var(--border-bright);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; transition: all 0.15s; flex-shrink: 0;
+      color: transparent;
+    }
+    .nominee-card.selected .nom-check {
+      background: var(--gold); border-color: var(--gold); color: #000;
+    }
+
+    .nom-name {
+      font-size: 14px; font-weight: 600; color: var(--text-primary);
+      line-height: 1.3; padding-right: 24px; margin-bottom: 3px;
+    }
+    .nom-film { font-size: 12px; color: var(--text-muted); font-style: italic; }
+    .nom-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 9px; }
+
+    /* ===== BADGES ===== */
+    .badge {
+      display: inline-flex; align-items: center; gap: 3px;
+      padding: 2px 7px; border-radius: 10px;
+      font-size: 10px; font-weight: 700;
+      cursor: pointer; position: relative;
+      transition: opacity 0.15s; border: 1px solid transparent;
+      line-height: 1.5; white-space: nowrap;
+    }
+    .badge:hover { opacity: 0.85; }
+    .badge-BLACK      { background: var(--b-black);     color: var(--b-black-t); }
+    .badge-WOMEN      { background: var(--b-women);     color: var(--b-women-t); }
+    .badge-LATINO     { background: var(--b-latino);    color: var(--b-latino-t); }
+    .badge-ASIAN_PI   { background: var(--b-asian);     color: var(--b-asian-t); }
+    .badge-INDIGENOUS { background: var(--b-indigenous); color: var(--b-indigenous-t); }
+    .badge-LGBTQ      { background: var(--b-lgbtq);     color: var(--b-lgbtq-t); }
+    .badge-INTERNATIONAL { background: var(--b-intl);   color: var(--b-intl-t); }
+    .badge-IMMIGRANT  { background: var(--b-immigrant); color: var(--b-immigrant-t); }
+    .badge-FAITH      { background: var(--b-faith);     color: var(--b-faith-t); }
+    .badge-NEURO      { background: var(--b-neuro);     color: var(--b-neuro-t); }
+
+    /* ===== TOOLTIP MODAL ===== */
+    .tooltip-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      padding: 20px; align-items: flex-end; justify-content: center;
+      background: rgba(0,0,0,0.75);
+    }
+    .tooltip-overlay.visible { display: flex; }
+    .tooltip-card {
+      background: #1c1c1c; border: 1px solid var(--border-bright);
+      border-radius: var(--r); padding: 22px 22px 18px;
+      max-width: 420px; width: 100%; position: relative;
+      animation: slideUp 0.2s ease;
+    }
+    .tt-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .tt-badge-pill { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px; }
+    .tt-text { font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
+    .tt-close {
+      position: absolute; top: 10px; right: 10px;
+      background: var(--border); border: none; color: var(--text-secondary);
+      width: 26px; height: 26px; border-radius: 50%; cursor: pointer;
+      font-size: 14px; display: flex; align-items: center; justify-content: center;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(24px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* ===== SUBMIT BAR ===== */
+    .submit-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(8,8,8,0.97); backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border); padding: 14px 20px; z-index: 50;
+    }
+    .submit-inner {
+      max-width: 560px; margin: 0 auto;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .submit-count { font-size: 13px; color: var(--text-secondary); white-space: nowrap; }
+    .submit-btn {
+      flex: 1; background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+      color: #000; border: none; padding: 13px 24px; border-radius: 50px;
+      font-size: 15px; font-weight: 700; font-family: 'Inter', sans-serif;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .submit-btn:hover { transform: translateY(-1px); box-shadow: 0 5px 18px rgba(201,162,39,0.38); }
+    .submit-btn:disabled { opacity: 0.38; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    .locked-banner {
+      width: 100%; background: rgba(80,0,0,0.55); border: 1px solid #5a0000;
+      border-radius: var(--r-sm); padding: 11px 16px; text-align: center;
+      font-size: 14px; color: #ff9999; font-weight: 500;
+    }
+    .submitted-banner {
+      width: 100%; background: rgba(0,60,0,0.55); border: 1px solid #005a00;
+      border-radius: var(--r-sm); padding: 11px 16px; text-align: center;
+      font-size: 14px; color: #90ee90; font-weight: 500;
+    }
+
+    /* ===== CONFIRMATION ===== */
+    .confirmation-page {
+      min-height: 100vh; display: flex; align-items: center;
+      justify-content: center; padding: 40px 20px;
+    }
+    .conf-card {
+      background: var(--bg-card); border: 1px solid var(--border-bright);
+      border-radius: var(--r); padding: 48px 36px;
+      max-width: 500px; width: 100%; text-align: center;
+    }
+    .conf-icon { font-size: 60px; margin-bottom: 18px; }
+    .conf-title { font-size: 30px; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+    .conf-text { font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
+    .conf-picks {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--r-sm); padding: 16px 20px; margin: 20px 0;
+      text-align: left; max-height: 200px; overflow-y: auto;
+    }
+    .conf-pick-row { font-size: 13px; padding: 4px 0; color: var(--text-secondary); }
+    .conf-pick-cat { color: var(--text-muted); }
+    .conf-pick-nom { color: var(--text-primary); font-weight: 500; }
+    .conf-btn {
+      margin-top: 24px; background: transparent; border: 2px solid var(--gold);
+      color: var(--gold); padding: 13px 32px; border-radius: 50px;
+      font-size: 15px; font-weight: 600; font-family: 'Inter', sans-serif;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .conf-btn:hover { background: var(--gold); color: #000; }
+
+    /* ===== LEADERBOARD ===== */
+    .lb-header { padding: 40px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 28px; }
+    .lb-title { font-size: clamp(30px, 6vw, 52px); font-weight: 900; color: var(--gold); margin-bottom: 6px; }
+    .lb-subtitle { font-size: 15px; color: var(--text-muted); }
+    .lb-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 18px; }
+    .lb-btn {
+      background: transparent; border: 1px solid var(--border-bright);
+      color: var(--text-secondary); padding: 9px 18px; border-radius: 20px;
+      cursor: pointer; font-size: 13px; font-family: 'Inter', sans-serif;
+      font-weight: 500; transition: all 0.2s;
+    }
+    .lb-btn:hover { color: var(--white); border-color: var(--text-muted); }
+    .lb-btn.gold { border-color: var(--gold-dim); color: var(--gold); }
+    .lb-btn.gold:hover { background: var(--gold); color: #000; }
+    .live-dot-wrap {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: #4dff4d; font-weight: 600;
+    }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #4dff4d;
+      animation: pulse 1.4s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; } 50% { opacity: 0.35; }
+    }
+
+    .lb-table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
+    .lb-table th {
+      text-align: left; padding: 9px 14px;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--text-muted); font-weight: 700;
+      border-bottom: 1px solid var(--border);
+    }
+    .lb-table td { padding: 13px 14px; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .lb-table tr:hover td { background: var(--bg-card); }
+    .lb-table tr.me td { background: rgba(201,162,39,0.05); }
+    .rank-col { color: var(--text-muted); font-weight: 700; width: 44px; }
+    .rank-col.t3 { color: var(--gold); font-size: 17px; }
+    .name-col { font-weight: 600; }
+    .handle-col { color: var(--text-muted); font-size: 13px; }
+    .score-col { font-weight: 700; color: var(--gold); text-align: right; }
+    .bar-col { width: 100px; }
+    .bar-track { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .bar-fill {
+      height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      border-radius: 2px; transition: width 0.6s ease;
+    }
+
+    .winners-section { margin-top: 40px; padding-top: 36px; border-top: 1px solid var(--border); }
+    .winners-title { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 18px; }
+    .winner-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 0; border-bottom: 1px solid var(--border);
+    }
+    .winner-row:last-child { border-bottom: none; }
+    .winner-cat { font-size: 12px; color: var(--text-muted); min-width: 190px; flex-shrink: 0; }
+    .winner-name { font-size: 14px; font-weight: 600; color: var(--gold); }
+    .winner-trophy { font-size: 16px; }
+
+    .empty-lb { text-align: center; padding: 60px 20px; }
+    .empty-lb h3 { font-size: 20px; color: var(--text-secondary); margin-bottom: 8px; }
+    .empty-lb p { font-size: 14px; color: var(--text-muted); }
+
+    /* ===== ADMIN ===== */
+    .admin-page { padding: 40px 20px 80px; }
+    .admin-title { font-size: 26px; font-weight: 700; color: var(--red); margin-bottom: 4px; }
+    .admin-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+    .admin-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap;
+    }
+    .admin-cat { min-width: 180px; font-size: 13px; font-weight: 500; flex-shrink: 0; }
+    .admin-select {
+      flex: 1; min-width: 200px; background: var(--bg-card);
+      border: 1px solid var(--border-bright); color: var(--text-primary);
+      padding: 7px 11px; border-radius: var(--r-sm);
+      font-size: 13px; font-family: 'Inter', sans-serif;
+    }
+    .admin-save {
+      background: var(--gold); color: #000; border: none;
+      padding: 7px 14px; border-radius: var(--r-sm);
+      font-size: 12px; font-weight: 700; cursor: pointer;
+      font-family: 'Inter', sans-serif; white-space: nowrap;
+    }
+    .admin-status { font-size: 11px; color: var(--green); white-space: nowrap; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 36px 20px; border-top: 1px solid var(--border);
+      text-align: center; margin-top: 20px;
+    }
+    .footer-text {
+      font-size: 13px; color: var(--text-muted);
+      font-style: italic; line-height: 1.8;
+    }
+    .footer-text strong { color: var(--gold-dim); font-style: normal; }
+    .footer-link { color: var(--text-muted); text-decoration: none; font-size: 12px; }
+    .footer-link:hover { color: var(--text-secondary); }
+
+    /* ===== UTILS ===== */
+    .hidden { display: none !important; }
+    .loading { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 48px; color: var(--text-muted); }
+    .spinner { width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 600px) {
+      .form-card { padding: 26px 18px; }
+      .conf-card { padding: 32px 22px; }
+      .lb-table th:last-child, .lb-table td:last-child { display: none; }
+      .winner-cat { min-width: 130px; }
+      .landing-hero { padding: 60px 16px 48px; }
+      .section-block { padding: 40px 0; }
+      .admin-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== TOOLTIP OVERLAY ===== -->
+<div class="tooltip-overlay" id="tooltipOverlay" onclick="hideTooltip(event)">
+  <div class="tooltip-card" onclick="event.stopPropagation()">
+    <button class="tt-close" onclick="hideTooltip()">✕</button>
+    <div class="tt-header" id="ttHeader"></div>
+    <p class="tt-text" id="ttText"></p>
+  </div>
+</div>
+
+<!-- ===== PAGE: LANDING ===== -->
+<div class="page active" id="pageLanding">
+  <!-- HERO -->
+  <div class="landing-hero">
+    <div class="landing-eyebrow">The 98th Academy Awards · March 15, 2026</div>
+    <h1 class="landing-title">#OscarsSoWhite</h1>
+    <p class="landing-byline">The Official Ballot · Created by April Reign</p>
+    <p class="landing-years">Ten Years of Changing Hollywood · 2015 – 2026</p>
+    <div class="landing-cta-wrap">
+      <button class="btn-primary" onclick="scrollToForm()">Cast Your Ballot</button>
+      <button class="btn-secondary" onclick="scrollToHistory()">Read the History</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- HISTORY -->
+    <div class="section-block" id="historySection">
+      <div class="section-eyebrow">Ten Years of #OscarsSoWhite</div>
+      <h2 class="section-heading">A Tweet That Changed Hollywood</h2>
+      <p class="section-text">On January 15, 2015, April Reign posted a tweet that would redefine the conversation about diversity in film. The 87th Academy Awards had just announced nominations without a single person of color in any of the 20 acting slots. Her response was three words: <em>#OscarsSoWhite they asked to touch my hair.</em></p>
+      <p class="section-text">What started as a moment of Black Twitter brilliance became a global movement. The following year, when the 88th Oscars nominations were equally whitewashed, the hashtag erupted again — this time reaching every corner of the internet, every major newsroom, and the desks of Academy leadership.</p>
+      <p class="section-text">The Academy's response was unprecedented: they doubled their membership with a commitment to diversifying who gets to vote. New representation standards — the A through Z Diversity Standards — were enacted for Best Picture eligibility. Studios reconsidered what stories they greenlit, who they cast, and who they hired behind the camera. Ten years later, the Academy's membership has transformed. And in 2026, we are seeing the results.</p>
+      <div class="quote-block">
+        <p class="quote-text">"#OscarsSoWhite has always encompassed all traditionally underrepresented communities — not just race and ethnicity. It's also gender identity, sexual orientation, disability, First Nations status, and age."</p>
+        <p class="quote-attr">— April Reign, creator of #OscarsSoWhite</p>
+      </div>
+    </div>
+
+    <!-- WHY 2026 IS HISTORIC -->
+    <div class="section-block">
+      <div class="section-eyebrow">Why 2026 Is Historic</div>
+      <h2 class="section-heading">A Record-Breaking Year</h2>
+      <p class="section-text">The 98th Oscars represent the most diverse nominations in the Academy's history. This is the second year under the new diversity rules enacted directly in response to #OscarsSoWhite. The numbers speak for themselves.</p>
+
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-icon">🎬</div>
+          <div class="fact-text"><strong>Sinners</strong> broke the all-time Oscar nomination record with <strong>16 nominations</strong> — surpassing Titanic and La La Land.</div>
+          <div class="fact-hl">All-time record: most nominated film in Oscar history</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">✊</div>
+          <div class="fact-text"><strong>10 of those 16 Sinners nominations</strong> went to Black artists — tying the all-time record set by Judas and the Black Messiah (2021).</div>
+          <div class="fact-hl">Tied all-time record for Black artist nominations in one film</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🎥</div>
+          <div class="fact-text"><strong>Ryan Coogler</strong> is only the 7th Black filmmaker ever nominated for Best Director in the Academy's 98-year history.</div>
+          <div class="fact-hl">No Black filmmaker has ever won Best Director</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">👗</div>
+          <div class="fact-text"><strong>Ruth E. Carter</strong> (Costume Design, Sinners) earned her 5th nomination — making her the most-nominated Black woman in Oscar history, surpassing Viola Davis.</div>
+          <div class="fact-hl">Most-nominated Black woman in Oscar history</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">📷</div>
+          <div class="fact-text"><strong>Autumn Durald Arkapaw</strong> (Cinematography, Sinners) is the first woman of color, first Filipino woman, and only the 4th woman ever nominated for Best Cinematography in 98 years. She also shot the first IMAX film by a woman.</div>
+          <div class="fact-hl">First woman of color nominated for Best Cinematography</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🏗️</div>
+          <div class="fact-text"><strong>Hannah Beachler</strong> (Production Design, Sinners) earned her 2nd nomination — she remains the only Black woman ever nominated in that category.</div>
+          <div class="fact-hl">Only Black woman ever nominated for Best Production Design</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🎞️</div>
+          <div class="fact-text"><strong>Zinzi Coogler</strong> is the first Filipina producer and 3rd Black woman nominated for Best Picture. She and Ryan are the first Black married couple nominated together in that category.</div>
+          <div class="fact-hl">First Black married couple nominated for Best Picture together</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🌎</div>
+          <div class="fact-text"><strong>Wagner Moura</strong> is the first Brazilian-born actor ever nominated for Best Actor in the Academy's 98-year history.</div>
+          <div class="fact-hl">First Brazilian-born Best Actor nominee in Oscar history</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🇵🇷</div>
+          <div class="fact-text"><strong>Benicio Del Toro</strong> (Puerto Rican) earned his 3rd Oscar nomination, continuing his legacy as one of the most acclaimed Latino actors in Hollywood history.</div>
+          <div class="fact-hl">3rd nomination for a Puerto Rican icon</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🔊</div>
+          <div class="fact-text">The <strong>Sirât sound team</strong> (Amanda Villavieja, Laia Casanovas, Yasmina Praderas) is the <strong>first all-female team ever nominated for Best Sound</strong> in Oscar history.</div>
+          <div class="fact-hl">First all-female sound nomination in 98 years</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">✈️</div>
+          <div class="fact-text"><strong>Sev Ohanian</strong> (Producer, Sinners) is the first Armenian American nominated for Best Picture.</div>
+          <div class="fact-hl">First Armenian American Best Picture nominee</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🎞️</div>
+          <div class="fact-text"><strong>Kaouther Ben Hania</strong> (The Voice of Hind Rajab) is the first Arab woman to direct three Oscar-nominated films. If she wins, she will be the first Arab woman to receive an Academy Award.</div>
+          <div class="fact-hl">First Arab woman to direct 3 Oscar-nominated films</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🇵🇸</div>
+          <div class="fact-text">Palestinian actor <strong>Motaz Malhees</strong> was barred from attending the ceremony due to the US travel ban. His statement: <em>"You can block a passport. You cannot block a voice."</em></div>
+          <div class="fact-hl">Nominated, but barred from attending his own ceremony</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">♀</div>
+          <div class="fact-text">A record <strong>74 women nominated</strong> total — an all-time high for the Academy Awards.</div>
+          <div class="fact-hl">All-time record: most women nominated in a single year</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🌮</div>
+          <div class="fact-text"><strong>Yvett Merino</strong> is the first Latina nominated in animation at the Academy Awards.</div>
+          <div class="fact-hl">First Latina nomination in animated feature</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🏳️‍🌈</div>
+          <div class="fact-text">LGBTQ+ representation includes <em>A Friend of Dorothy</em>, <em>Come See Me in the Good Light</em>, and <em>Elio</em> — small but visible progress in an area that remains underrepresented.</div>
+          <div class="fact-hl">LGBTQIA+ stories still fighting for space</div>
+        </div>
+      </div>
+
+      <div class="quote-block" style="margin-top:32px">
+        <p class="quote-text">"You can block a passport. You cannot block a voice."</p>
+        <p class="quote-attr">— Motaz Malhees, Palestinian actor, The Voice of Hind Rajab · barred from attending the Oscars by US travel ban</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="section-block" id="formSection">
+      <div class="section-eyebrow">Cast Your Ballot</div>
+      <h2 class="section-heading" style="margin-bottom:8px">Pick Your Winners</h2>
+      <p class="section-text" style="margin-bottom:32px">All 24 categories. Tap nominees to learn about the history they're making. Lock your picks before <strong style="color:var(--text-primary)">4:00 PM PT / 7:00 PM ET</strong> tonight.</p>
+
+      <div class="form-card">
+        <h3 class="form-title">Enter Your Info</h3>
+        <p class="form-subtitle">No account needed. Just your name and handle.</p>
+        <form id="entryForm" onsubmit="handleEntrySubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="inputName">Full Name</label>
+            <input class="form-input" type="text" id="inputName" placeholder="Your name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inputHandle">Social Media Handle</label>
+            <input class="form-input" type="text" id="inputHandle" placeholder="@yourhandle" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="inputEmail">Email Address</label>
+            <input class="form-input" type="email" id="inputEmail" placeholder="you@email.com" required autocomplete="email">
+          </div>
+          <button class="form-submit" type="submit" id="entrySubmitBtn">Enter the Ballot →</button>
+        </form>
+        <p class="form-note">Your email is never displayed publicly. By entering, you agree to have your name and handle shown on the leaderboard.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="footer-text"><strong>#OscarsSoWhite</strong> was created by April Reign in 2015. Ten years later, the work continues.</p>
+    <p style="margin-top:10px"><a class="footer-link" href="#admin" onclick="checkAdmin()">·</a></p>
+  </div>
+</div>
+
+<!-- ===== PAGE: BALLOT ===== -->
+<div class="page" id="pageBallot">
+  <nav class="nav" id="ballotNav">
+    <div class="nav-inner">
+      <div class="nav-brand">#OscarsSoWhite</div>
+      <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showPage('pageBallot')">Ballot</button>
+        <button class="nav-tab" onclick="showPage('pageLeaderboard')">Leaderboard</button>
+      </div>
+    </div>
+  </nav>
+  <div class="progress-bar">
+    <div class="progress-inner">
+      <div class="progress-label" id="progressLabel">0 of 24 categories</div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container ballot-page" id="ballotContainer">
+    <!-- Categories rendered by JS -->
+  </div>
+  <div class="submit-bar" id="submitBar">
+    <div class="submit-inner" id="submitInner">
+      <!-- content rendered by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE: CONFIRMATION ===== -->
+<div class="page" id="pageConfirmation">
+  <div class="confirmation-page">
+    <div class="conf-card">
+      <div class="conf-icon">🏆</div>
+      <h2 class="conf-title">Ballot Locked In!</h2>
+      <p class="conf-text">Your picks are saved. Check the leaderboard after the ceremony to see how you did.</p>
+      <div class="conf-picks" id="confPicksList"></div>
+      <button class="conf-btn" onclick="showPage('pageLeaderboard')">✦ See the Leaderboard</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE: LEADERBOARD ===== -->
+<div class="page" id="pageLeaderboard">
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">#OscarsSoWhite</div>
+      <div class="nav-tabs">
+        <button class="nav-tab" onclick="showPage('pageBallot')">Ballot</button>
+        <button class="nav-tab active" onclick="showPage('pageLeaderboard')">Leaderboard</button>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="lb-header">
+      <h1 class="lb-title">Leaderboard</h1>
+      <p class="lb-subtitle" id="lbSubtitle">Loading results...</p>
+      <div class="lb-actions">
+        <span class="live-dot-wrap"><span class="live-dot"></span> LIVE</span>
+        <button class="lb-btn" onclick="loadLeaderboard()">↻ Refresh</button>
+        <button class="lb-btn gold" onclick="checkAdmin()">✦ Enter Results (Admin)</button>
+      </div>
+    </div>
+    <div id="lbContent">
+      <div class="loading"><div class="spinner"></div> Loading...</div>
+    </div>
+    <div id="winnersSection" class="winners-section hidden">
+      <h2 class="winners-title">🏆 Announced Winners</h2>
+      <div id="winnersList"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="footer-text"><strong>#OscarsSoWhite</strong> was created by April Reign in 2015. Ten years later, the work continues.</p>
+    <p style="margin-top:10px"><a class="footer-link" href="#" onclick="checkAdmin(); return false;">Admin</a></p>
+  </div>
+</div>
+
+<!-- ===== PAGE: ADMIN ===== -->
+<div class="page" id="pageAdmin">
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">#OscarsSoWhite — Admin</div>
+      <div class="nav-tabs">
+        <button class="nav-tab" onclick="showPage('pageLeaderboard')">← Back</button>
+      </div>
+    </div>
+  </nav>
+  <div class="container admin-page">
+    <h1 class="admin-title">Winner Entry</h1>
+    <p class="admin-subtitle">As categories are announced, select the winner and click Save. Scores update automatically for all users.</p>
+    <div id="adminRows">
+      <!-- rendered by JS -->
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// CONFIG
+// ============================================================
+const ADMIN_PASSWORD = 'OscarsSoWhite2026';
+const LOCK_TIME = new Date('2026-03-15T23:00:00Z'); // 4PM PDT / 7PM EDT
+
+// API calls go to /api (Vercel serverless function)
+async function apiFetch(path, opts = {}) {
+  const res = await fetch('/api' + path, {
+    headers: { 'Content-Type': 'application/json', ...(opts.headers || {}) },
+    ...opts,
+    body: opts.body ? JSON.stringify(opts.body) : undefined,
+  });
+  if (!res.ok) {
+    const err = await res.text().catch(() => res.statusText);
+    throw new Error(err || res.statusText);
+  }
+  return res.json();
+}
+
+// ============================================================
+// BADGE TYPES
+// ============================================================
+const BT = {
+  BLACK:         { emoji: '✊', label: 'Black' },
+  WOMEN:         { emoji: '♀',  label: 'Women' },
+  LATINO:        { emoji: '🌮', label: 'Latino/Hispanic' },
+  ASIAN_PI:      { emoji: '🌏', label: 'Asian & Pacific Islander' },
+  INDIGENOUS:    { emoji: '🪶', label: 'Indigenous' },
+  LGBTQ:         { emoji: '🏳️‍🌈', label: 'LGBTQIA+' },
+  INTERNATIONAL: { emoji: '🌍', label: 'International' },
+  IMMIGRANT:     { emoji: '✈️', label: 'Immigrant & Diaspora' },
+  FAITH:         { emoji: '☪',  label: 'Faith Minority' },
+  NEURO:         { emoji: '🧠', label: 'Neurodiversity' },
+};
+
+const b = (type, tooltip) => ({ type, tooltip });
+
+// ============================================================
+// BALLOT DATA — All 24 Categories
+// ============================================================
+const CATEGORIES = [
+  {
+    id: 'best-picture', name: 'Best Picture', layout: '5',
+    nominees: [
+      { id: 'bp-bugonia',     name: 'Bugonia',                  badges: [] },
+      { id: 'bp-f1',          name: 'F1',                       badges: [] },
+      { id: 'bp-frankenstein',name: 'Frankenstein',             badges: [
+        b('LATINO', 'Directed by Guillermo del Toro (Mexican) — the most-nominated Latino producer in Oscar history with 3 Oscar wins.'),
+      ]},
+      { id: 'bp-hamnet',      name: 'Hamnet',                   badges: [
+        b('WOMEN', 'Directed by Chloé Zhao, one of only a handful of women ever nominated for Best Director. No woman has won Best Director since Kathryn Bigelow in 2010.'),
+      ]},
+      { id: 'bp-marty',       name: 'Marty Supreme',            badges: [] },
+      { id: 'bp-one-battle',  name: 'One Battle After Another', badges: [
+        b('BLACK', 'Teyana Taylor (Black woman) nominated for Supporting Actress alongside a multiracial ensemble including Benicio del Toro.'),
+      ]},
+      { id: 'bp-secret',      name: 'The Secret Agent',         badges: [
+        b('INTERNATIONAL', 'Brazilian-Portuguese language film. Wagner Moura is the first Brazilian-born actor ever nominated for Best Actor in Oscar\'s 98-year history.'),
+        b('IMMIGRANT', "Brazilian cinema's landmark year — a record number of Brazilian nominees across multiple categories."),
+      ]},
+      { id: 'bp-sentimental', name: 'Sentimental Value',        badges: [
+        b('INTERNATIONAL', 'Norwegian-language film — part of a record year for non-English language nominees across acting and directing categories.'),
+      ]},
+      { id: 'bp-sinners',     name: 'Sinners',                  badges: [
+        b('BLACK', 'Record 16 nominations — 10 for Black artists, tying the all-time record. Ryan Coogler is only the 7th Black filmmaker ever nominated for Best Director in Oscar history.'),
+        b('WOMEN', 'Zinzi Coogler is the first Filipina producer and 3rd Black woman nominated for Best Picture. She and Ryan are the first Black married couple nominated together in this category.'),
+        b('IMMIGRANT', 'Sev Ohanian is the first Armenian American nominated for Best Picture.'),
+      ]},
+      { id: 'bp-train',       name: 'Train Dreams',             badges: [] },
+    ]
+  },
+  {
+    id: 'actor-leading', name: 'Actor in a Leading Role', layout: '2',
+    nominees: [
+      { id: 'al-chalamet', name: 'Timothée Chalamet', film: 'Marty Supreme',             badges: [] },
+      { id: 'al-dicaprio', name: 'Leonardo DiCaprio', film: 'One Battle After Another',  badges: [] },
+      { id: 'al-hawke',    name: 'Ethan Hawke',        film: 'Blue Moon',                badges: [] },
+      { id: 'al-jordan',   name: 'Michael B. Jordan',  film: 'Sinners',                  badges: [
+        b('BLACK', "First Oscar nomination for Jordan, playing twins in Coogler's record-breaking film. Part of the historic 10 Black artists nominated for Sinners — tying the all-time record."),
+      ]},
+      { id: 'al-moura',    name: 'Wagner Moura',        film: 'The Secret Agent',         badges: [
+        b('INTERNATIONAL', "First Brazilian-born actor EVER nominated for Best Actor in Oscar's 98-year history."),
+        b('IMMIGRANT', 'Only the third Brazilian ever nominated in any acting category, following Fernanda Torres (2025) and Fernanda Montenegro (1999).'),
+      ]},
+    ]
+  },
+  {
+    id: 'actress-leading', name: 'Actress in a Leading Role', layout: '2',
+    nominees: [
+      { id: 'acl-buckley', name: 'Jessie Buckley',  film: 'Hamnet',                    badges: [] },
+      { id: 'acl-byrne',   name: 'Rose Byrne',       film: "If I Had Legs I'd Kick You", badges: [] },
+      { id: 'acl-reinsve', name: 'Renate Reinsve',   film: 'Sentimental Value',          badges: [
+        b('INTERNATIONAL', 'Norwegian actress in a Norwegian-language film — part of a historic first: 4 non-English language films nominating actors across all four acting categories in the same year.'),
+      ]},
+      { id: 'acl-stone',   name: 'Emma Stone',        film: 'Bugonia',                   badges: [] },
+      { id: 'acl-hudson',  name: 'Kate Hudson',        film: 'Song Sung Blue',            badges: [] },
+    ]
+  },
+  {
+    id: 'actor-supporting', name: 'Actor in a Supporting Role', layout: '2',
+    nominees: [
+      { id: 'as-elordi',   name: 'Jacob Elordi',      film: 'Frankenstein',             badges: [] },
+      { id: 'as-penn',     name: 'Sean Penn',           film: 'One Battle After Another', badges: [] },
+      { id: 'as-skarsgard',name: 'Stellan Skarsgård',  film: 'Sentimental Value',        badges: [] },
+      { id: 'as-deltoro',  name: 'Benicio del Toro',   film: 'One Battle After Another', badges: [
+        b('LATINO', "Puerto Rican actor earning his 3rd Oscar nomination. One of only five actors of Puerto Rican descent to win an Oscar, having done so in 2001 for Traffic."),
+      ]},
+      { id: 'as-lindo',    name: 'Delroy Lindo',        film: 'Sinners',                  badges: [
+        b('BLACK', "Black British-American actor earning his first Oscar nomination at age 72 — part of Sinners' 10 nominations for Black artists tying the all-time record."),
+      ]},
+    ]
+  },
+  {
+    id: 'actress-supporting', name: 'Actress in a Supporting Role', layout: '2',
+    nominees: [
+      { id: 'acs-fanning', name: 'Elle Fanning',             film: 'Sentimental Value',        badges: [] },
+      { id: 'acs-lilieaas',name: 'Inga Ibsdotter Lilieaas', film: 'Sentimental Value',        badges: [
+        b('INTERNATIONAL', 'Norwegian actress — part of the historic first of 4 non-English language films represented across all four acting categories in the same year.'),
+      ]},
+      { id: 'acs-madigan', name: 'Amy Madigan',              film: 'Weapons',                  badges: [] },
+      { id: 'acs-mosaku',  name: 'Wunmi Mosaku',             film: 'Sinners',                  badges: [
+        b('BLACK', "Black British-Nigerian actress — part of Sinners' record 10 nominations for Black artists, tying the all-time record."),
+      ]},
+      { id: 'acs-taylor',  name: 'Teyana Taylor',            film: 'One Battle After Another', badges: [
+        b('BLACK', "Black woman nominated for Supporting Actress in a major Paul Thomas Anderson studio film — breaking into one of Hollywood's most prestigious categories."),
+        b('WOMEN', "Teyana Taylor's nomination brings Black women's representation to one of the Academy's highest-profile acting categories."),
+      ]},
+    ]
+  },
+  {
+    id: 'directing', name: 'Directing', layout: '2',
+    nominees: [
+      { id: 'dir-pta',     name: 'Paul Thomas Anderson', film: 'One Battle After Another', badges: [] },
+      { id: 'dir-coogler', name: 'Ryan Coogler',          film: 'Sinners',                  badges: [
+        b('BLACK', "Only the 7th Black filmmaker ever nominated for Best Director in the Academy's 98-year history, joining John Singleton, Lee Daniels, Steve McQueen, Barry Jenkins, Jordan Peele and Spike Lee. No Black filmmaker has ever won Best Director."),
+      ]},
+      { id: 'dir-zhao',    name: 'Chloé Zhao',            film: 'Hamnet',                   badges: [
+        b('WOMEN', 'Chinese-born director — only the second woman nominated for Best Director in recent years. No woman has won Best Director since Kathryn Bigelow in 2010.'),
+        b('INTERNATIONAL', 'Born in Beijing — a landmark international voice directing major English-language films.'),
+        b('IMMIGRANT', 'Chinese-born director working in Hollywood — part of a growing diaspora of international filmmakers leading major studio productions.'),
+      ]},
+      { id: 'dir-safdie',  name: 'Josh Safdie',           film: 'Marty Supreme',            badges: [] },
+      { id: 'dir-trier',   name: 'Joachim Trier',          film: 'Sentimental Value',        badges: [
+        b('INTERNATIONAL', "Norwegian director — non-English language films in Best Director are exceptionally rare. Represents the Academy's evolving embrace of global cinema."),
+      ]},
+    ]
+  },
+  {
+    id: 'animated-feature', name: 'Animated Feature Film', layout: '2',
+    nominees: [
+      { id: 'af-arco',     name: 'Arco',                               badges: [] },
+      { id: 'af-elio',     name: 'Elio',                               badges: [
+        b('LGBTQ', "Originally featured a gay character, though the film was altered before release. Still represents one of the few LGBTQIA+ adjacent stories in this year's nominations — a reflection of the industry's continued hesitance to fully greenlight queer stories."),
+      ]},
+      { id: 'af-kpop',     name: 'KPop Demon Hunters',                 badges: [
+        b('ASIAN_PI', 'Korean-language animated film with an all-Asian creative team — the first Korean animated film nominated for Best Animated Feature in Oscar history.'),
+      ]},
+      { id: 'af-amelie',   name: 'Little Amélie or the Character of Rain', badges: [
+        b('WOMEN', 'French-language animated film directed by an international female director.'),
+        b('INTERNATIONAL', 'French-language production representing the growing international presence in animated features.'),
+      ]},
+      { id: 'af-zootopia', name: 'Zootopia 2',                         badges: [] },
+    ]
+  },
+  {
+    id: 'animated-short', name: 'Animated Short Film', layout: '2',
+    nominees: [
+      { id: 'ashort-butterfly',  name: 'Butterfly',                    badges: [
+        b('BLACK', "Directed by a Black woman — reflecting the expanded Academy membership driven by #OscarsSoWhite. One of only a few animated shorts by Black women to reach this level."),
+        b('WOMEN', 'A rare animated short by a Black woman director reaching the Academy Awards.'),
+      ]},
+      { id: 'ashort-forevergreen',name: 'Forevergreen',                badges: [] },
+      { id: 'ashort-pearls',     name: 'The Girl Who Cried Pearls',    badges: [
+        b('ASIAN_PI', 'Features a non-Western cultural narrative with a female lead — centering Asian storytelling traditions.'),
+        b('WOMEN', 'Centers a female protagonist exploring themes of cultural identity and heritage.'),
+      ]},
+      { id: 'ashort-retirement', name: 'Retirement Plan',              badges: [] },
+      { id: 'ashort-sisters',    name: 'The Three Sisters',            badges: [] },
+    ]
+  },
+  {
+    id: 'casting', name: 'Casting', layout: '2', isNew: true,
+    nominees: [
+      { id: 'cast-hamnet',     name: 'Hamnet',                   badges: [
+        b('WOMEN', "Casting reflects the Academy's new representation standards under rules enacted directly in response to #OscarsSoWhite."),
+      ]},
+      { id: 'cast-marty',      name: 'Marty Supreme',            badges: [] },
+      { id: 'cast-one-battle', name: 'One Battle After Another', badges: [
+        b('BLACK', 'Multiracial cast including Teyana Taylor in a landmark role.'),
+        b('LATINO', 'Cast includes Benicio del Toro (Puerto Rican) earning his 3rd Oscar nomination.'),
+      ]},
+      { id: 'cast-secret',     name: 'The Secret Agent',         badges: [
+        b('INTERNATIONAL', 'Brazilian film with a diverse Latin American and international cast.'),
+        b('LATINO', 'Brazilian and Latin American cast reflecting the growing visibility of Latinx talent in international cinema.'),
+      ]},
+      { id: 'cast-sinners',    name: 'Sinners',                  badges: [
+        b('BLACK', 'Casting director Francine Maisler assembled a predominantly Black cast for a record-breaking major studio film, including Michael B. Jordan, Delroy Lindo, Wunmi Mosaku, Miles Caton and more.'),
+      ]},
+    ]
+  },
+  {
+    id: 'cinematography', name: 'Cinematography', layout: '2',
+    nominees: [
+      { id: 'cin-frankenstein', name: 'Frankenstein',             badges: [] },
+      { id: 'cin-marty',        name: 'Marty Supreme',            badges: [] },
+      { id: 'cin-one-battle',   name: 'One Battle After Another', badges: [] },
+      { id: 'cin-sinners',      name: 'Sinners',                  badges: [
+        b('BLACK', "Autumn Durald Arkapaw: first woman of color nominated for Best Cinematography in Oscar history."),
+        b('WOMEN', "Only the 4th woman ever nominated for Best Cinematography in 98 years. Also the first woman to shoot on large-format IMAX film — a top contender to become the first female winner ever."),
+        b('ASIAN_PI', 'First Filipino woman nominated for Best Cinematography — a landmark for Asian and Pacific Islander representation in below-the-line craft categories.'),
+      ]},
+      { id: 'cin-train',        name: 'Train Dreams',             badges: [] },
+    ]
+  },
+  {
+    id: 'costume-design', name: 'Costume Design', layout: '2',
+    nominees: [
+      { id: 'cos-avatar',        name: 'Avatar: Fire and Ash', badges: [] },
+      { id: 'cos-frankenstein',  name: 'Frankenstein',         badges: [] },
+      { id: 'cos-hamnet',        name: 'Hamnet',               badges: [
+        b('WOMEN', 'Costume designer Malgosia Turzanska — female-led design team bringing historical precision to the production.'),
+      ]},
+      { id: 'cos-marty',         name: 'Marty Supreme',        badges: [] },
+      { id: 'cos-sinners',       name: 'Sinners',              badges: [
+        b('BLACK', "Ruth E. Carter earned her 5th nomination — making her the most-nominated Black woman in Oscar history, surpassing Viola Davis. She was the first Black person to win an Oscar for Costume Design (Black Panther, 2018) and the first Black woman to win two competitive Oscars."),
+        b('WOMEN', "Ruth E. Carter is now the most-nominated Black woman in Oscar history. Her 5th nomination is a direct legacy of #OscarsSoWhite's push for Academy membership diversity."),
+      ]},
+    ]
+  },
+  {
+    id: 'doc-feature', name: 'Documentary Feature Film', layout: '2',
+    nominees: [
+      { id: 'df-alabama',   name: 'The Alabama Solution',           badges: [
+        b('BLACK', "Explores racial justice and the criminal legal system's disproportionate impact on Black communities in the American South."),
+      ]},
+      { id: 'df-come-see',  name: 'Come See Me in the Good Light',  badges: [
+        b('BLACK', "Documentary centered on a Black LGBTQ+ artist's story — a rare intersection of identities in this year's nominations."),
+        b('WOMEN', 'Centers a Black woman\'s artistic journey, identity, and lived experience.'),
+        b('LGBTQ', 'One of the few LGBTQIA+ stories recognized this year — a powerful example of the intersections #OscarsSoWhite has always championed.'),
+      ]},
+      { id: 'df-cutting',   name: 'Cutting Through Rocks',          badges: [
+        b('INTERNATIONAL', 'International film examining race and gender across cultural contexts.'),
+        b('WOMEN', 'Directed by a woman — explores gendered barriers in a non-Western global context.'),
+      ]},
+      { id: 'df-mr-nobody', name: 'Mr. Nobody Against Putin',       badges: [
+        b('INTERNATIONAL', "Documents political dissent — a story of marginalized voices fighting authoritarianism. Represents the Academy's expanded recognition of global human rights stories."),
+      ]},
+      { id: 'df-neighbor',  name: 'The Perfect Neighbor',           badges: [
+        b('LATINO', 'Explores race, immigration and belonging in America, directed by a Latina filmmaker.'),
+        b('WOMEN', 'Directed by a Latina woman — highlights the intersection of gender and immigration in the American experience.'),
+      ]},
+    ]
+  },
+  {
+    id: 'doc-short', name: 'Documentary Short Film', layout: '2',
+    nominees: [
+      { id: 'ds-empty',    name: 'All the Empty Rooms',                         badges: [
+        b('BLACK', "Examines the housing crisis and its disproportionate impact on communities of color — systemic inequality documented on screen."),
+      ]},
+      { id: 'ds-armed',    name: 'Armed Only with a Camera',                    badges: [
+        b('INTERNATIONAL', 'Story of journalist Brent Renaud, who documented conflict and displacement affecting marginalized communities globally.'),
+        b('IMMIGRANT', "Renaud's work crossed borders to document stories of displacement and diaspora — journalism as advocacy."),
+      ]},
+      { id: 'ds-children', name: 'Children No More: "Were and Are Gone"',      badges: [
+        b('INTERNATIONAL', 'Documents atrocities affecting children — an international story of loss, community, and the struggle against erasure.'),
+        b('FAITH', 'Reflects the experiences of faith minority communities facing persecution and the loss of the next generation.'),
+      ]},
+      { id: 'ds-devil',    name: 'The Devil Is Busy',                           badges: [] },
+      { id: 'ds-strange',  name: 'Perfectly a Strangeness',                    badges: [] },
+    ]
+  },
+  {
+    id: 'film-editing', name: 'Film Editing', layout: '2',
+    nominees: [
+      { id: 'ed-f1',        name: 'F1',                       badges: [] },
+      { id: 'ed-marty',     name: 'Marty Supreme',            badges: [] },
+      { id: 'ed-one-battle',name: 'One Battle After Another', badges: [] },
+      { id: 'ed-sentimental',name: 'Sentimental Value',       badges: [] },
+      { id: 'ed-sinners',   name: 'Sinners',                  badges: [
+        b('BLACK', "Editor Michael Shawver worked with a predominantly Black creative team on the most-nominated film in Oscar history — a testament to what #OscarsSoWhite's advocacy made possible."),
+      ]},
+    ]
+  },
+  {
+    id: 'intl-feature', name: 'International Feature Film', layout: '2',
+    nominees: [
+      { id: 'if-secret',    name: 'The Secret Agent',         film: 'Brazil',   badges: [
+        b('INTERNATIONAL', "Brazilian-Portuguese language film by director Kleber Mendonça Filho — part of a record year for Brazilian nominees across multiple categories."),
+        b('LATINO', "Represents the landmark year for Brazilian and Latin American cinema at the Academy Awards."),
+        b('IMMIGRANT', "Brazilian cinema's historic breakthrough — a diaspora story reaching the Academy's highest recognition."),
+      ]},
+      { id: 'if-accident',  name: 'It Was Just an Accident',  film: 'Iran',     badges: [
+        b('INTERNATIONAL', "Iranian film by director Jafar Panahi, who has faced persecution and imprisonment for his filmmaking. His nominations represent storytelling in defiance of state oppression."),
+        b('FAITH', "Represents voices from Iran — Panahi's work has been banned by his own government. His Academy recognition is an act of global solidarity."),
+      ]},
+      { id: 'if-sentimental',name: 'Sentimental Value',       film: 'Norway',   badges: [
+        b('INTERNATIONAL', 'Norwegian-language film with international female leads — part of a record year for non-English language cinema at the Oscars.'),
+        b('WOMEN', 'Features international female leads in a Norwegian-language film — a rare combination of gender and language representation at this level.'),
+      ]},
+      { id: 'if-sirat',     name: 'Sirât',                    film: 'Spain',    badges: [
+        b('INTERNATIONAL', "Spanish film representing the global expansion of Academy recognition beyond Hollywood."),
+        b('WOMEN', "Sirât's sound team — Amanda Villavieja, Laia Casanovas and Yasmina Praderas — became the first all-female team EVER nominated for Best Sound in Oscar history."),
+      ]},
+      { id: 'if-hind',      name: 'The Voice of Hind Rajab',  film: 'Tunisia',  badges: [
+        b('INTERNATIONAL', "Tunisian director Kaouther Ben Hania becomes the first Arab woman to direct three Oscar-nominated films. If she wins, she will be the first Arab woman to receive an Academy Award."),
+        b('FAITH', "Palestinian lead actor Motaz Malhees was barred from attending the ceremony under the US travel ban. His response: 'You can block a passport. You cannot block a voice.'"),
+        b('IMMIGRANT', "Kaouther Ben Hania's work crosses borders of language, culture and political conflict — her films have been nominated while telling stories the world needs to hear."),
+      ]},
+    ]
+  },
+  {
+    id: 'live-action-short', name: 'Live Action Short Film', layout: '2',
+    nominees: [
+      { id: 'las-butchers', name: "Butcher's Stain",           badges: [] },
+      { id: 'las-dorothy',  name: 'A Friend of Dorothy',       badges: [
+        b('LGBTQ', "One of only a handful of explicitly LGBTQIA+ stories recognized in this year's nominations — told by a queer filmmaker. Represents the community's ongoing fight for recognition in short film."),
+      ]},
+      { id: 'las-austen',   name: "Jane Austen's Period Drama", badges: [] },
+      { id: 'las-singers',  name: 'The Singers',               badges: [
+        b('WOMEN', 'Directed by a woman of color with a non-Western cultural narrative.'),
+        b('INTERNATIONAL', 'Represents non-Western storytelling traditions in the live action short category.'),
+      ]},
+      { id: 'las-saliva',   name: 'Two People Exchanging Saliva', badges: [
+        b('LGBTQ', "Explores identity and intimacy outside the heteronormative lens — one of the few explicitly queer narratives in this year's nominations."),
+      ]},
+    ]
+  },
+  {
+    id: 'makeup', name: 'Makeup and Hairstyling', layout: '2',
+    nominees: [
+      { id: 'mh-frankenstein', name: 'Frankenstein',        badges: [] },
+      { id: 'mh-kokuho',       name: 'Kokuho',              badges: [
+        b('ASIAN_PI', 'Japanese film with a non-Western makeup team — Kyoko Toyokawa, Naomi Hibino and Tadashi Nishimatsu — recognized in a craft category that rarely acknowledges Asian productions.'),
+      ]},
+      { id: 'mh-sinners',      name: 'Sinners',             badges: [
+        b('BLACK', "Team led by Shunika Terry (Black woman) alongside Ken Diaz and Mike Fontaine — worked to authentically represent Black beauty, hair and culture in 1930s Mississippi Delta."),
+        b('WOMEN', "Led by Shunika Terry, a Black woman — a landmark for representation in craft leadership roles."),
+      ]},
+      { id: 'mh-smashing',     name: 'The Smashing Machine', badges: [] },
+      { id: 'mh-ugly',         name: 'The Ugly Stepsister',  badges: [] },
+    ]
+  },
+  {
+    id: 'original-score', name: 'Music (Original Score)', layout: '2',
+    nominees: [
+      { id: 'sc-bugonia',     name: 'Jerskin Fendrix',   film: 'Bugonia',               badges: [] },
+      { id: 'sc-frankenstein',name: 'Alexandre Desplat', film: 'Frankenstein',          badges: [] },
+      { id: 'sc-hamnet',      name: 'Max Richter',        film: 'Hamnet',               badges: [] },
+      { id: 'sc-one-battle',  name: 'Jonny Greenwood',   film: 'One Battle After Another', badges: [] },
+      { id: 'sc-sinners',     name: 'Ludwig Göransson',  film: 'Sinners',              badges: [
+        b('BLACK', "Score drew deeply on Black American musical traditions — blues, gospel and jazz — for a genre (horror) almost never honored by the Academy. Göransson worked closely with Coogler's vision of Black cultural heritage and music history."),
+      ]},
+    ]
+  },
+  {
+    id: 'original-song', name: 'Music (Original Song)', layout: '2',
+    nominees: [
+      { id: 'sg-golden',     name: '"Golden"',           film: 'KPop Demon Hunters',      badges: [
+        b('ASIAN_PI', "Korean-language pop song performed by Asian artists Ejae, Audrey Nuna and Rei Ami — part of the Academy's growing recognition of non-English language music and Asian artistic excellence."),
+      ]},
+      { id: 'sg-train',      name: '"Train Dreams"',     film: 'Train Dreams',             badges: [] },
+      { id: 'sg-dear-me',    name: '"Dear Me"',          film: 'Diane Warren: Relentless', badges: [] },
+      { id: 'sg-lied',       name: '"I Lied To You"',   film: 'Sinners',                  badges: [
+        b('BLACK', "Written and performed by Black artists Miles Caton and Raphael Saadiq. Rooted in Black American blues tradition — the ceremony performance featured an extraordinary tribute with Misty Copeland, Eric Gales, Brittany Howard, Christone 'Kingfish' Ingram, Bobby Rush, Shaboozey and Alice Smith."),
+      ]},
+      { id: 'sg-sweet',      name: '"Sweet Dreams of Joy"', film: 'Viva Verdi!',          badges: [] },
+    ]
+  },
+  {
+    id: 'production-design', name: 'Production Design', layout: '2',
+    nominees: [
+      { id: 'pd-frankenstein', name: 'Frankenstein',             badges: [] },
+      { id: 'pd-hamnet',       name: 'Hamnet',                   badges: [] },
+      { id: 'pd-marty',        name: 'Marty Supreme',            badges: [] },
+      { id: 'pd-one-battle',   name: 'One Battle After Another', badges: [] },
+      { id: 'pd-sinners',      name: 'Sinners',                  badges: [
+        b('BLACK', "Hannah Beachler earned her 2nd nomination — she remains the only Black woman ever nominated for Best Production Design. She won for Black Panther (2018), becoming the first Black person to win in that category. Ten years after #OscarsSoWhite, she is still the only one."),
+        b('WOMEN', "Hannah Beachler remains the only Black woman ever nominated for Best Production Design — a category closed to Black talent for almost a century."),
+      ]},
+    ]
+  },
+  {
+    id: 'sound', name: 'Sound', layout: '2',
+    nominees: [
+      { id: 'snd-f1',        name: 'F1',                       badges: [] },
+      { id: 'snd-frankenstein',name: 'Frankenstein',           badges: [] },
+      { id: 'snd-one-battle',name: 'One Battle After Another', badges: [] },
+      { id: 'snd-sinners',   name: 'Sinners',                  badges: [] },
+      { id: 'snd-sirat',     name: 'Sirât',                    badges: [
+        b('WOMEN', "Sound team Amanda Villavieja, Laia Casanovas and Yasmina Praderas made history as the first all-female team EVER nominated for Best Sound in the Academy's 98-year history. Only 6 women have ever won in competitive sound categories."),
+      ]},
+    ]
+  },
+  {
+    id: 'visual-effects', name: 'Visual Effects', layout: '2',
+    nominees: [
+      { id: 'vfx-avatar',   name: 'Avatar: Fire and Ash',   badges: [] },
+      { id: 'vfx-f1',       name: 'F1',                     badges: [] },
+      { id: 'vfx-jurassic', name: 'Jurassic World Rebirth', badges: [] },
+      { id: 'vfx-lost-bus', name: 'The Lost Bus',            badges: [] },
+      { id: 'vfx-sinners',  name: 'Sinners',                 badges: [
+        b('BLACK', "VFX team realized a Black-led supernatural epic set in 1930s Mississippi — a genre and cultural setting the Academy has almost never recognized in this craft category."),
+      ]},
+    ]
+  },
+  {
+    id: 'adapted-screenplay', name: 'Writing (Adapted Screenplay)', layout: '2',
+    nominees: [
+      { id: 'ada-bugonia',     name: 'Will Tracy',                     film: 'Bugonia',               badges: [] },
+      { id: 'ada-frankenstein',name: 'Guillermo del Toro',             film: 'Frankenstein',          badges: [
+        b('LATINO', 'Guillermo del Toro (Mexican) — the most-nominated Latino filmmaker in Oscar history, with 3 Oscar wins. His recognition is a direct legacy of #OscarsSoWhite\'s advocacy for Latino voices.'),
+      ]},
+      { id: 'ada-hamnet',      name: "Chloé Zhao & Maggie O'Farrell", film: 'Hamnet',               badges: [
+        b('WOMEN', "Screenplay by two women adapting O'Farrell's acclaimed novel — centers a mother's grief and interiority, a perspective rarely honored at this level of Academy recognition."),
+      ]},
+      { id: 'ada-one-battle',  name: 'Paul Thomas Anderson',           film: 'One Battle After Another', badges: [] },
+      { id: 'ada-train',       name: 'Clint Bailey & Greg Kwedar',    film: 'Train Dreams',          badges: [] },
+    ]
+  },
+  {
+    id: 'original-screenplay', name: 'Writing (Original Screenplay)', layout: '2',
+    nominees: [
+      { id: 'orig-blue-moon', name: 'Robert Kaplow',                    film: 'Blue Moon',             badges: [] },
+      { id: 'orig-accident',  name: 'Jafar Panahi et al.',              film: 'It Was Just an Accident', badges: [
+        b('INTERNATIONAL', "By Jafar Panahi, an Iranian filmmaker who has been imprisoned and banned from filmmaking by his government. His nomination is a defiant act of storytelling against political oppression."),
+        b('FAITH', "Panahi's work under persecution by Iran's government represents the silencing of Muslim voices — his films are banned in his home country while the world gives them its highest recognition."),
+      ]},
+      { id: 'orig-marty',     name: 'Ronald Bronstein & Josh Safdie',  film: 'Marty Supreme',         badges: [] },
+      { id: 'orig-sentimental',name: 'Eskil Vogt & Joachim Trier',     film: 'Sentimental Value',     badges: [
+        b('INTERNATIONAL', "Norwegian-language original screenplay — non-English originals almost never reach this category. Represents the global expansion of the Academy's creative imagination."),
+      ]},
+      { id: 'orig-sinners',   name: 'Ryan Coogler',                     film: 'Sinners',               badges: [
+        b('BLACK', "Ryan Coogler's original screenplay for a Black-led genre film set in 1930s Mississippi — a rare intersection of Black authorship, horror, history and Academy recognition. No Black screenwriter has ever won Best Original Screenplay."),
+      ]},
+    ]
+  },
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let state = {
+  page: 'pageLanding',
+  user: null,
+  picks: {},
+  submitted: false,
+  ballotId: null,
+  winners: {},
+  adminUnlocked: false,
+};
+
+let leaderboardTimer = null;
+
+// ============================================================
+// INIT
+// ============================================================
+function init() {
+  // Restore from localStorage
+  const savedUser = ls('oscarsUser');
+  const savedPicks = ls('oscarsPicks');
+  const savedSubmitted = ls('oscarsSubmitted');
+  const savedBallotId = ls('oscarsBallotId');
+
+  if (savedUser) {
+    state.user = savedUser;
+    if (savedPicks) state.picks = savedPicks;
+    if (savedSubmitted) state.submitted = savedSubmitted;
+    if (savedBallotId) state.ballotId = savedBallotId;
+    // Skip landing page if user exists
+    renderBallot();
+    showPage('pageBallot');
+  }
+
+  // Check for lock
+  updateLockState();
+}
+
+function ls(key) {
+  try { return JSON.parse(localStorage.getItem(key)); } catch(e) { return null; }
+}
+function lsSet(key, val) {
+  try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {}
+}
+
+// ============================================================
+// PAGE NAVIGATION
+// ============================================================
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+  state.page = pageId;
+  window.scrollTo(0, 0);
+
+  if (pageId === 'pageLeaderboard') loadLeaderboard();
+  if (pageId === 'pageAdmin') renderAdmin();
+}
+
+function scrollToForm() {
+  document.getElementById('formSection').scrollIntoView({ behavior: 'smooth' });
+}
+function scrollToHistory() {
+  document.getElementById('historySection').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ============================================================
+// LOCK STATE
+// ============================================================
+function isLocked() {
+  return new Date() >= LOCK_TIME;
+}
+function updateLockState() {
+  if (!isLocked()) {
+    const ms = LOCK_TIME - new Date();
+    setTimeout(updateLockState, Math.min(ms + 1000, 60000));
+  }
+  if (state.page === 'pageBallot') renderSubmitBar();
+}
+function formatLockCountdown() {
+  const diff = LOCK_TIME - new Date();
+  if (diff <= 0) return 'Ballot is locked';
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  if (h > 0) return `Locks in ${h}h ${m}m`;
+  const s = Math.floor((diff % 60000) / 1000);
+  return `Locks in ${m}m ${s}s`;
+}
+
+// ============================================================
+// ENTRY FORM
+// ============================================================
+function handleEntrySubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('inputName').value.trim();
+  let handle = document.getElementById('inputHandle').value.trim();
+  const email = document.getElementById('inputEmail').value.trim();
+  if (!handle.startsWith('@')) handle = '@' + handle;
+
+  state.user = { name, handle, email };
+  lsSet('oscarsUser', state.user);
+
+  renderBallot();
+  showPage('pageBallot');
+}
+
+// ============================================================
+// BALLOT RENDER
+// ============================================================
+function renderBallot() {
+  const container = document.getElementById('ballotContainer');
+  container.innerHTML = CATEGORIES.map((cat, i) => renderCategory(cat, i)).join('');
+  renderProgressBar();
+  renderSubmitBar();
+}
+
+function renderCategory(cat, index) {
+  const picked = state.picks[cat.id];
+  const gridClass = cat.layout === '5' ? 'nominees-grid-5' : 'nominees-grid-2';
+  const checkMark = picked
+    ? `<span class="cat-check picked">✓ Picked</span>`
+    : `<span class="cat-check" id="check-${cat.id}">— Not picked</span>`;
+
+  return `
+    <div class="category-section" id="section-${cat.id}">
+      <div class="category-header">
+        <span class="cat-num">${String(index+1).padStart(2,'0')}</span>
+        <h2 class="cat-name">${cat.name}</h2>
+        ${cat.isNew ? '<span class="cat-new">NEW</span>' : ''}
+        <span class="cat-check${picked ? ' picked' : ''}" id="check-${cat.id}">${picked ? '✓ Picked' : '— Not picked'}</span>
+      </div>
+      <div class="${gridClass}">
+        ${cat.nominees.map(n => renderNominee(cat, n)).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderNominee(cat, nom) {
+  const picked = state.picks[cat.id] === nom.id;
+  const locked = isLocked() || state.submitted;
+  const winner = state.winners[cat.id];
+  let extraClass = '';
+  if (winner) {
+    if (nom.id === winner && picked) extraClass = ' winner-correct';
+    else if (nom.id === winner && !picked) extraClass = ' winner-correct';
+    else if (nom.id !== winner && picked) extraClass = ' winner-wrong';
+  }
+
+  const badgesHTML = nom.badges.length > 0
+    ? `<div class="nom-badges">${nom.badges.map((b, bi) => renderBadge(b, cat.id, nom.id, bi)).join('')}</div>`
+    : '';
+
+  return `
+    <div class="nominee-card${picked ? ' selected' : ''}${locked ? ' locked' : ''}${extraClass}"
+         id="card-${nom.id}"
+         onclick="${locked ? '' : `pickNominee('${cat.id}', '${nom.id}')`}">
+      <div class="nom-check">✓</div>
+      <div class="nom-name">${nom.name}</div>
+      ${nom.film ? `<div class="nom-film">${nom.film}</div>` : ''}
+      ${badgesHTML}
+    </div>
+  `;
+}
+
+function renderBadge(badge, catId, nomId, badgeIndex) {
+  const bt = BT[badge.type];
+  if (!bt) return '';
+  return `<span class="badge badge-${badge.type}" onclick="event.stopPropagation(); showTooltip('${badge.type}', ${JSON.stringify(badge.tooltip).replace(/'/g, "\\'")})">${bt.emoji} ${bt.label}</span>`;
+}
+
+function pickNominee(catId, nomId) {
+  if (isLocked() || state.submitted) return;
+
+  if (state.picks[catId] === nomId) {
+    delete state.picks[catId];
+  } else {
+    state.picks[catId] = nomId;
+  }
+  lsSet('oscarsPicks', state.picks);
+
+  // Update just the affected category cards (no full re-render)
+  const cat = CATEGORIES.find(c => c.id === catId);
+  cat.nominees.forEach(n => {
+    const card = document.getElementById('card-' + n.id);
+    if (!card) return;
+    if (state.picks[catId] === n.id) card.classList.add('selected');
+    else card.classList.remove('selected');
+  });
+
+  const checkEl = document.getElementById('check-' + catId);
+  if (checkEl) {
+    checkEl.textContent = state.picks[catId] ? '✓ Picked' : '— Not picked';
+    checkEl.className = 'cat-check' + (state.picks[catId] ? ' picked' : '');
+  }
+
+  renderProgressBar();
+  renderSubmitBar();
+}
+
+function renderProgressBar() {
+  const count = Object.keys(state.picks).length;
+  const total = CATEGORIES.length;
+  const pct = (count / total) * 100;
+  const fill = document.getElementById('progressFill');
+  const label = document.getElementById('progressLabel');
+  if (fill) fill.style.width = pct + '%';
+  if (label) label.textContent = `${count} of ${total} categories`;
+}
+
+function renderSubmitBar() {
+  const inner = document.getElementById('submitInner');
+  if (!inner) return;
+  const count = Object.keys(state.picks).length;
+
+  if (isLocked()) {
+    inner.innerHTML = `<div class="locked-banner">🔒 Ballot locked — 4:00 PM PT / 7:00 PM ET · No more picks accepted</div>`;
+    return;
+  }
+  if (state.submitted) {
+    inner.innerHTML = `<div class="submitted-banner">✓ Ballot submitted! Check the <span style="color:var(--gold);cursor:pointer" onclick="showPage('pageLeaderboard')">leaderboard</span></div>`;
+    return;
+  }
+  inner.innerHTML = `
+    <span class="submit-count">${count}/24 picks</span>
+    <button class="submit-btn" onclick="submitBallot()" ${count === 0 ? 'disabled' : ''}>
+      Lock In My Picks (${count})
+    </button>
+  `;
+}
+
+// ============================================================
+// SUBMIT BALLOT
+// ============================================================
+async function submitBallot() {
+  if (isLocked()) return;
+  if (state.submitted) return;
+  const count = Object.keys(state.picks).length;
+  if (count === 0) return;
+
+  const btn = document.querySelector('.submit-btn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Saving...'; }
+
+  let ballotId = null;
+  try {
+    const result = await apiFetch('/ballot', {
+      method: 'POST',
+      body: {
+        name: state.user.name,
+        handle: state.user.handle,
+        email: state.user.email,
+        picks: state.picks,
+      }
+    });
+    ballotId = result.id;
+  } catch(err) {
+    console.error('Submit error:', err);
+    // Continue in local-only mode — ballot still saved to localStorage
+  }
+
+  state.submitted = true;
+  state.ballotId = ballotId;
+  lsSet('oscarsSubmitted', true);
+  lsSet('oscarsBallotId', ballotId);
+
+  renderConfirmation();
+  showPage('pageConfirmation');
+}
+
+function renderConfirmation() {
+  const list = document.getElementById('confPicksList');
+  if (!list) return;
+  const rows = CATEGORIES.map(cat => {
+    const nomId = state.picks[cat.id];
+    if (!nomId) return '';
+    const nom = cat.nominees.find(n => n.id === nomId);
+    if (!nom) return '';
+    return `<div class="conf-pick-row"><span class="conf-pick-cat">${cat.name}: </span><span class="conf-pick-nom">${nom.name}</span></div>`;
+  }).filter(Boolean).join('');
+  list.innerHTML = rows || '<div style="color:var(--text-muted);font-size:13px">No picks made</div>';
+}
+
+// ============================================================
+// TOOLTIP
+// ============================================================
+function showTooltip(type, text) {
+  const bt = BT[type];
+  if (!bt) return;
+  const header = document.getElementById('ttHeader');
+  const textEl = document.getElementById('ttText');
+  header.innerHTML = `<span class="badge badge-${type} tt-badge-pill">${bt.emoji} ${bt.label}</span>`;
+  textEl.textContent = text;
+  document.getElementById('tooltipOverlay').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+function hideTooltip(e) {
+  if (!e || e.target === document.getElementById('tooltipOverlay')) {
+    document.getElementById('tooltipOverlay').classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+}
+
+// ============================================================
+// LEADERBOARD
+// ============================================================
+async function loadLeaderboard() {
+  const content = document.getElementById('lbContent');
+  const subtitle = document.getElementById('lbSubtitle');
+  if (!content) return;
+
+  content.innerHTML = '<div class="loading"><div class="spinner"></div> Loading leaderboard...</div>';
+
+  try {
+    const data = await apiFetch('/leaderboard');
+    const ballots = data.ballots || [];
+    const winnersArr = data.winners || [];
+
+    // Build winners map { categoryId: nomineeId }
+    const winnersMap = {};
+    winnersArr.forEach(w => { winnersMap[w.categoryId] = w.nomineeId; });
+    state.winners = winnersMap;
+    const announcedCount = Object.keys(winnersMap).length;
+
+    // Score each ballot
+    const scored = ballots.map(b => {
+      const score = Object.keys(winnersMap).filter(catId => winnersMap[catId] && b.picks[catId] === winnersMap[catId]).length;
+      return { ...b, score };
+    }).sort((a,b) => b.score - a.score || (a.submittedAt || '').localeCompare(b.submittedAt || ''));
+
+    const maxScore = scored.length > 0 ? Math.max(scored[0].score, 1) : 1;
+
+    if (scored.length === 0) {
+      content.innerHTML = `<div class="empty-lb"><h3>Be the first to submit!</h3><p>No ballots yet. Cast yours on the Ballot tab.</p></div>`;
+    } else {
+      let html = `<table class="lb-table"><thead><tr>
+        <th>#</th><th>Name</th><th>Handle</th>
+        <th style="text-align:right">Score</th>
+        <th></th>
+      </tr></thead><tbody>`;
+
+      scored.forEach((entry, i) => {
+        const rank = i + 1;
+        const isMe = state.ballotId && entry.id === state.ballotId;
+        const rankIcon = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank;
+        const barPct = Math.round((entry.score / maxScore) * 100);
+        html += `<tr${isMe ? ' class="me"' : ''}>
+          <td class="rank-col${rank <= 3 ? ' t3' : ''}">${rankIcon}</td>
+          <td class="name-col">${escHtml(entry.name)}${isMe ? ' <span style="font-size:11px;color:var(--gold)">(you)</span>' : ''}</td>
+          <td class="handle-col">${escHtml(entry.handle)}</td>
+          <td class="score-col">${entry.score}<span style="color:var(--text-muted);font-weight:400;font-size:12px"> / ${announcedCount}</span></td>
+          <td class="bar-col"><div class="bar-track"><div class="bar-fill" style="width:${barPct}%"></div></div></td>
+        </tr>`;
+      });
+      html += '</tbody></table>';
+      content.innerHTML = html;
+    }
+
+    if (subtitle) subtitle.textContent = `${scored.length} ballot${scored.length !== 1 ? 's' : ''} · ${announcedCount} of 24 categories announced`;
+    if (announcedCount > 0) renderWinnersList(winnersArr);
+
+    clearTimeout(leaderboardTimer);
+    leaderboardTimer = setTimeout(loadLeaderboard, 30000);
+
+  } catch(err) {
+    console.error('Leaderboard error:', err);
+    content.innerHTML = `<div class="empty-lb"><h3>Couldn't load leaderboard</h3><p>${escHtml(err.message)}</p></div>`;
+  }
+}
+
+function renderWinnersList(winnersArr) {
+  const section = document.getElementById('winnersSection');
+  const list = document.getElementById('winnersList');
+  if (!section || !list) return;
+  if (winnersArr.length === 0) { section.classList.add('hidden'); return; }
+  section.classList.remove('hidden');
+
+  const rows = winnersArr.map(w => {
+    const cat = CATEGORIES.find(c => c.id === w.categoryId);
+    return `<div class="winner-row">
+      <span class="winner-trophy">🏆</span>
+      <span class="winner-cat">${cat ? cat.name : w.categoryId}</span>
+      <span class="winner-name">${escHtml(w.winnerName)}</span>
+    </div>`;
+  }).join('');
+  list.innerHTML = rows;
+}
+
+// ============================================================
+// ADMIN
+// ============================================================
+function checkAdmin() {
+  if (state.adminUnlocked) { showPage('pageAdmin'); return; }
+  const pwd = prompt('Admin password:');
+  if (pwd === ADMIN_PASSWORD) {
+    state.adminUnlocked = true;
+    showPage('pageAdmin');
+  } else if (pwd !== null) {
+    alert('Incorrect password.');
+  }
+}
+
+function renderAdmin() {
+  const container = document.getElementById('adminRows');
+  if (!container) return;
+  container.innerHTML = CATEGORIES.map(cat => {
+    const currentWinner = state.winners[cat.id] || '';
+    const options = cat.nominees.map(n =>
+      `<option value="${n.id}"${currentWinner === n.id ? ' selected' : ''}>${n.name}${n.film ? ' — ' + n.film : ''}</option>`
+    ).join('');
+    return `
+      <div class="admin-row">
+        <div class="admin-cat">${cat.name}</div>
+        <select class="admin-select" id="admin-sel-${cat.id}">
+          <option value="">— Not yet announced</option>
+          ${options}
+        </select>
+        <button class="admin-save" onclick="saveWinner('${cat.id}')">Save</button>
+        <span class="admin-status" id="admin-status-${cat.id}">${currentWinner ? '✓ Saved' : ''}</span>
+      </div>
+    `;
+  }).join('');
+}
+
+async function saveWinner(catId) {
+  const sel = document.getElementById('admin-sel-' + catId);
+  const statusEl = document.getElementById('admin-status-' + catId);
+  const nomineeId = sel.value;
+  if (!nomineeId) return;
+
+  const cat = CATEGORIES.find(c => c.id === catId);
+  const nom = cat.nominees.find(n => n.id === nomineeId);
+  const winnerName = nom ? nom.name + (nom.film ? ' — ' + nom.film : '') : nomineeId;
+
+  state.winners[catId] = nomineeId;
+
+  if (statusEl) statusEl.textContent = '⏳';
+
+  try {
+    await apiFetch('/winner', {
+      method: 'POST',
+      body: { categoryId: catId, nomineeId, winnerName, password: ADMIN_PASSWORD },
+    });
+    if (statusEl) statusEl.textContent = '✓ Saved';
+  } catch(err) {
+    console.error(err);
+    if (statusEl) statusEl.textContent = '✗ ' + err.message;
+  }
+}
+
+// ============================================================
+// UTILITIES
+// ============================================================
+function escHtml(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ============================================================
+// START
+// ============================================================
+init();
+</script>
+</body>
+</html>

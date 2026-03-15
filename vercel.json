@@ -1,0 +1,13 @@
+{
+  "outputDirectory": "public",
+  "installCommand": "cd api && npm install",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "api/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

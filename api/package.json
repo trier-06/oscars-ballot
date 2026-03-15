@@ -1,0 +1,10 @@
+{
+  "name": "oscars-ballot-api",
+  "version": "1.0.0",
+  "description": "#OscarsSoWhite 2026 Ballot API",
+  "main": "index.js",
+  "type": "commonjs",
+  "dependencies": {
+    "firebase-admin": "^13.6.1"
+  }
+}
