@@ -1,1352 +1,835 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>#OscarsSoWhite 2026 Ballot — April Reign</title>
-  <meta name="description" content="Cast your 98th Oscars ballot. Celebrate historic nominations. Created by April Reign, creator of #OscarsSoWhite.">
-  <meta property="og:title" content="#OscarsSoWhite 2026 Ballot">
-  <meta property="og:description" content="Cast your ballot for the 98th Oscars. Celebrate historic nominations. Curated by April Reign.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@ReignOfApril">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --page-bg: #0A0A0A;
-      --cream: #FEFCF7;
-      --cream-tint: #FDF8EC;
-      --gold: #C9A84C;
-      --gold-dim: rgba(201,168,76,0.3);
-      --gold-bright: #E8C96A;
-      --purple: #7B3FA0;
-      --ink: #1A1209;
-      --ink-mid: #4A3820;
-      --ink-light: #7A6040;
-      --nav-h: 52px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#OscarsSoWhite — 2026 Oscars Ballot</title>
+<meta name="description" content="Cast your 98th Oscars ballot. Celebrate historic nominations. Created by April Reign, creator of #OscarsSoWhite.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@ReignOfApril">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C9A84C;--gold-l:#E8C96A;--black:#0A0A0A;--charcoal:#1A1A1A;
+  --ink:#2C2C2C;--warm:#FEFCF7;--parch:#F2EAD8;--cream:#FAF6EE;
+  --correct:#2D7A4F;--wrong:#8B2020;--cbg:#EAF5EE;--wbg:#F9EAEA;
+  --osw:#7B3FA0;--oswl:#C084FC;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--black);font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);min-height:100vh;}
+.page{background:var(--warm);max-width:980px;margin:0 auto;box-shadow:0 0 0 1px var(--gold),0 0 0 4px var(--black),0 0 0 5px var(--gold);}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* HEADER */
+.hdr{background:var(--black);padding:28px 40px 22px;text-align:center;position:relative;overflow:hidden;}
+.hdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.18) 0%,transparent 70%);pointer-events:none;}
+.rule{width:100%;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:8px 0;}
+.yr{font-family:'Cinzel',serif;color:var(--gold);font-size:10px;letter-spacing:6px;opacity:.8;}
+.ttl{font-family:'Cinzel',serif;color:var(--gold-l);font-size:clamp(22px,5vw,44px);font-weight:700;letter-spacing:2px;text-shadow:0 0 30px rgba(201,168,76,.3);margin:5px 0 3px;}
+.sub{font-family:'Cormorant Garamond',serif;color:rgba(201,168,76,.6);font-size:14px;font-style:italic;letter-spacing:2px;}
 
-    html { scroll-behavior: smooth; }
+/* OSW STRIP */
+.osw-strip{background:#1a0f2e;border-top:1px solid rgba(192,132,252,.4);border-bottom:1px solid rgba(192,132,252,.4);padding:10px 40px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+.osw-lbl{font-family:'Cinzel',serif;color:var(--oswl);font-size:9px;letter-spacing:3px;white-space:nowrap;}
+.osw-div{width:1px;height:20px;background:rgba(192,132,252,.3);flex-shrink:0;}
+.osw-desc{font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.55);font-size:13px;font-style:italic;flex:1;}
+.osw-cr{margin-left:auto;font-family:'Cormorant Garamond',serif;color:rgba(192,132,252,.4);font-size:12px;font-style:italic;white-space:nowrap;}
 
-    body {
-      background: var(--page-bg);
-      color: var(--ink);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 18px;
-      line-height: 1.5;
-      min-height: 100vh;
-    }
+/* ENTRY */
+.entry-page{background:var(--black);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+.entry-card{background:var(--warm);max-width:460px;width:100%;box-shadow:0 0 0 1px var(--gold),0 0 0 4px var(--black),0 0 0 5px var(--gold),0 8px 60px rgba(0,0,0,.7);}
+.entry-body{padding:26px 36px 34px;}
+.f-lbl{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:5px;text-transform:uppercase;}
+.f-inp{width:100%;border:none;border-bottom:1px solid var(--gold);background:transparent;font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--ink);padding:5px 0;outline:none;font-style:italic;margin-bottom:20px;}
+.f-inp::placeholder{color:rgba(0,0,0,.25);font-style:italic;}
+.platform-row{display:flex;gap:8px;margin-bottom:20px;}
+.f-sel{border:none;border-bottom:1px solid var(--gold);background:transparent;font-family:'Cinzel',serif;font-size:9px;letter-spacing:1px;color:var(--gold);padding:5px 0;outline:none;cursor:pointer;flex:0 0 auto;}
+.f-inp-handle{flex:1;border:none;border-bottom:1px solid var(--gold);background:transparent;font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--ink);padding:5px 0;outline:none;font-style:italic;}
+.f-inp-handle::placeholder{color:rgba(0,0,0,.25);font-style:italic;}
+.err{background:#fdf0f0;border:1px solid var(--wrong);color:var(--wrong);padding:8px 12px;font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;margin-bottom:14px;border-radius:2px;}
+.btn-gold{width:100%;background:var(--gold);color:var(--black);border:none;padding:13px 0;font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;cursor:pointer;font-weight:700;transition:background .2s;}
+.btn-gold:hover{background:var(--gold-l);}
+.ballot-ct{text-align:center;margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:13px;color:#999;font-style:italic;}
+.cd-bar{background:var(--charcoal);padding:7px 36px;text-align:center;}
+.cd-lbl{font-family:'Cinzel',serif;color:var(--gold);font-size:9px;letter-spacing:2px;}
+.cd-num{font-family:'Cinzel',serif;color:var(--gold-l);font-size:14px;font-weight:700;}
+.locked-bar{background:#1a0505;padding:7px 36px;text-align:center;border-bottom:1px solid rgba(255,80,80,.2);}
+.locked-lbl{font-family:'Cinzel',serif;color:#ff7070;font-size:9px;letter-spacing:2px;}
 
-    /* ── NAV ─────────────────────────────────────────────── */
-    #nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      height: var(--nav-h);
-      background: #000;
-      border-bottom: 1px solid rgba(201,168,76,0.25);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 20px;
-    }
-    #nav .logo {
-      font-family: 'Cinzel', serif;
-      font-weight: 700; font-size: 14px; letter-spacing: 0.12em;
-      color: var(--gold); text-decoration: none;
-      white-space: nowrap;
-    }
-    #nav .logo span { color: #fff; }
-    .nav-tabs { display: flex; gap: 4px; }
-    .nav-tab {
-      font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(255,255,255,0.5); background: none; border: none;
-      padding: 6px 12px; border-radius: 3px; cursor: pointer;
-      transition: color .2s, background .2s;
-    }
-    .nav-tab:hover { color: var(--gold-bright); }
-    .nav-tab.active { color: var(--gold); background: rgba(201,168,76,0.1); }
+/* LANDING SECTION */
+.landing{background:var(--black);padding:32px 40px;border-bottom:1px solid rgba(201,168,76,.2);}
+.landing-tag{font-family:'Cinzel',serif;color:var(--oswl);font-size:9px;letter-spacing:4px;opacity:.7;margin-bottom:12px;}
+.landing-h{font-family:'Cinzel',serif;color:var(--gold-l);font-size:clamp(16px,3vw,24px);font-weight:700;letter-spacing:1px;margin-bottom:12px;}
+.landing-p{font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.7);font-size:15px;line-height:1.7;margin-bottom:16px;}
+.landing-p b{color:var(--gold-l);font-weight:600;font-style:normal;}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0;}
+.stat-card{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:14px 16px;}
+.stat-num{font-family:'Cinzel',serif;color:var(--gold-l);font-size:22px;font-weight:700;line-height:1;}
+.stat-lbl{font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.55);font-size:13px;font-style:italic;margin-top:4px;line-height:1.4;}
+.landing-cta{font-family:'Cormorant Garamond',serif;color:rgba(201,168,76,.7);font-size:15px;font-style:italic;text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid rgba(201,168,76,.15);}
 
-    /* ── PROGRESS BAR ────────────────────────────────────── */
-    #progress-wrap {
-      position: sticky; top: var(--nav-h); z-index: 90;
-      background: #111; border-bottom: 1px solid rgba(201,168,76,0.15);
-      padding: 8px 20px; display: flex; align-items: center; gap: 12px;
-    }
-    #progress-bar-track {
-      flex: 1; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;
-    }
-    #progress-bar-fill {
-      height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-bright));
-      border-radius: 2px; transition: width .4s ease;
-      width: 0%;
-    }
-    #progress-label {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.5); white-space: nowrap; min-width: 80px; text-align: right;
-    }
-    #progress-score {
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.08em;
-      color: var(--gold); display: none; white-space: nowrap;
-    }
+/* TABS */
+.tabs{background:var(--charcoal);display:flex;}
+.tab{flex:1;padding:11px 0;font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-align:center;cursor:pointer;color:rgba(201,168,76,.4);border:none;border-bottom:2px solid transparent;background:transparent;text-transform:uppercase;transition:all .2s;}
+.tab.active{color:var(--gold-l);border-bottom:2px solid var(--gold);}
 
-    /* ── MAIN CONTENT ────────────────────────────────────── */
-    #main { padding-top: var(--nav-h); }
+/* PROGRESS */
+.prog-bar{background:var(--charcoal);padding:8px 40px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:10;}
+.prog-lbl{font-family:'Cinzel',serif;color:var(--gold);font-size:9px;letter-spacing:2px;white-space:nowrap;}
+.prog-track{flex:1;height:3px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold-l));transition:width .4s ease;}
+.prog-num{font-family:'Cinzel',serif;color:var(--gold-l);font-size:11px;white-space:nowrap;}
+.prog-num b{font-size:17px;}
+.prog-cd{font-family:'Cinzel',serif;color:rgba(201,168,76,.4);font-size:8px;letter-spacing:1px;white-space:nowrap;border-left:1px solid rgba(201,168,76,.2);padding-left:10px;}
 
-    .section { display: none; }
-    .section.active { display: block; }
+/* FETCH BAR */
+.fetch-bar{background:#140505;padding:8px 40px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(255,80,80,.15);}
+.fetch-msg{font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.5);font-size:13px;font-style:italic;}
+.btn-fetch{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;background:var(--gold);color:var(--black);border:none;padding:8px 14px;cursor:pointer;font-weight:700;}
+.btn-fetch:disabled{opacity:.5;cursor:not-allowed;}
 
-    /* ── BALLOT AREA ─────────────────────────────────────── */
-    .ballot-wrap {
-      max-width: 720px; margin: 0 auto; padding: 32px 16px 80px;
-    }
+/* BALLOT */
+.ballot-body{background:var(--warm);padding:20px 28px 36px;}
+.success-box{background:#f0faf4;border:1px solid var(--correct);color:var(--correct);padding:10px 14px;font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;margin-bottom:18px;border-radius:2px;text-align:center;}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.4),transparent);margin:3px 0;}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);}
 
-    .ballot-paper {
-      background: var(--cream);
-      border-radius: 2px;
-      box-shadow: 0 0 0 1px var(--gold), 0 0 0 5px #0A0A0A, 0 0 0 6px var(--gold), 0 8px 48px rgba(0,0,0,0.8);
-      overflow: hidden;
-    }
+/* BEST PICTURE */
+.bp-section{padding:14px 12px;border-bottom:1px solid rgba(201,168,76,.18);}
+.bp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;}
+.bp-card{border:1.5px solid rgba(201,168,76,.3);padding:10px 8px;cursor:pointer;text-align:center;border-radius:2px;background:var(--cream);transition:all .2s;position:relative;}
+.bp-card.rep{border-color:rgba(192,132,252,.5);background:rgba(123,63,160,.04);}
+.bp-card.selected{border-color:var(--gold);background:rgba(201,168,76,.14);}
+.bp-card.rep.selected{border-color:var(--osw);background:rgba(123,63,160,.13);}
+.bp-card.correct{border-color:var(--correct)!important;background:var(--cbg)!important;}
+.bp-card.wrong{border-color:var(--wrong)!important;background:var(--wbg)!important;opacity:.7;}
+.bp-card.winner{border-color:var(--gold)!important;background:rgba(201,168,76,.12)!important;}
+.bp-radio{width:10px;height:10px;border:1.5px solid var(--gold);border-radius:50%;margin:0 auto 5px;background:white;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.bp-card.rep .bp-radio{border-color:var(--oswl);}
+.bp-card.selected .bp-radio,.bp-card.correct .bp-radio,.bp-card.wrong .bp-radio{background:var(--gold);}
+.bp-card.rep.selected .bp-radio{background:var(--osw);border-color:var(--osw);}
+.bp-card.correct .bp-radio{background:var(--correct)!important;border-color:var(--correct)!important;}
+.bp-card.wrong .bp-radio{background:var(--wrong)!important;border-color:var(--wrong)!important;}
+.bp-dot{width:4px;height:4px;background:white;border-radius:50%;display:none;}
+.bp-card.selected .bp-dot,.bp-card.correct .bp-dot,.bp-card.wrong .bp-dot{display:block;}
+.bp-title{font-family:'Cormorant Garamond',serif;font-size:12px;line-height:1.3;font-style:italic;color:var(--ink);}
+.bp-rep-dot{width:6px;height:6px;background:var(--oswl);border-radius:50%;margin:4px auto 0;box-shadow:0 0 5px rgba(192,132,252,.6);cursor:pointer;position:relative;}
 
-    /* ── OSW STRIP ───────────────────────────────────────── */
-    .osw-strip {
-      background: var(--purple);
-      padding: 14px 28px;
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      flex-wrap: wrap;
-    }
-    .osw-title {
-      font-family: 'Cinzel', serif; font-weight: 900; font-size: 20px;
-      color: #fff; letter-spacing: 0.04em;
-    }
-    .osw-title span { color: #E8B4FF; }
-    .osw-year {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 15px; color: rgba(255,255,255,0.75);
-    }
+/* CATEGORY BLOCKS */
+.cat-block{padding:13px 16px;border-right:1px solid rgba(201,168,76,.18);border-bottom:1px solid rgba(201,168,76,.18);}
+.cat-block.no-right{border-right:none;}
+.cat-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid rgba(201,168,76,.2);display:flex;align-items:center;gap:8px;}
+.cat-title::before{content:'';width:12px;height:1px;background:var(--gold);flex-shrink:0;}
+.cat-title.done::after{content:'✓';margin-left:auto;color:var(--gold);font-size:10px;}
 
-    .osw-legend {
-      background: rgba(0,0,0,0.2);
-      padding: 10px 28px;
-      display: flex; flex-wrap: wrap; gap: 8px 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .legend-item {
-      display: flex; align-items: center; gap: 5px;
-      font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600;
-      letter-spacing: 0.08em; color: rgba(255,255,255,0.8);
-    }
-    .legend-dot {
-      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
-    }
+/* NOMINEES */
+.nom-list{list-style:none;}
+.nom-item{display:flex;align-items:flex-start;gap:8px;padding:4px 6px;margin:0 -6px;cursor:pointer;border-radius:3px;transition:background .15s;border-left:2px solid transparent;}
+.nom-item.rep{border-left:2px solid rgba(192,132,252,.55);padding-left:8px;margin-left:-8px;}
+.nom-item.selected{background:rgba(201,168,76,.1);}
+.nom-item.rep.selected{background:rgba(123,63,160,.09);}
+.nom-item.correct{background:var(--cbg)!important;}
+.nom-item.wrong{background:rgba(139,32,32,.07)!important;opacity:.8;}
+.nom-item.winner{background:rgba(201,168,76,.09)!important;}
+.radio{width:13px;height:13px;border:1.5px solid var(--gold);border-radius:50%;flex-shrink:0;margin-top:3px;display:flex;align-items:center;justify-content:center;background:white;transition:all .2s;}
+.nom-item.rep .radio{border-color:var(--oswl);}
+.nom-item.selected .radio{background:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.18);}
+.nom-item.rep.selected .radio{background:var(--osw);border-color:var(--osw);}
+.nom-item.correct .radio{background:var(--correct)!important;border-color:var(--correct)!important;}
+.nom-item.wrong .radio{background:var(--wrong)!important;border-color:var(--wrong)!important;}
+.rdot{width:4px;height:4px;background:white;border-radius:50%;display:none;}
+.nom-item.selected .rdot,.nom-item.correct .rdot,.nom-item.wrong .rdot{display:block;}
+.nom-name{font-family:'Cormorant Garamond',serif;font-size:13px;line-height:1.35;color:var(--ink);flex:1;}
+.nom-film{font-style:italic;color:#777;}
+.rep-badge{font-size:9px;background:rgba(123,63,160,.1);color:var(--osw);border:1px solid rgba(123,63,160,.25);border-radius:2px;padding:1px 5px;font-family:'Cinzel',serif;cursor:pointer;user-select:none;flex-shrink:0;align-self:center;position:relative;}
+.result-icon{font-size:12px;flex-shrink:0;align-self:center;min-width:14px;text-align:center;}
+.tooltip{display:none;position:absolute;bottom:calc(100% + 7px);right:0;background:#1a0f2e;color:rgba(255,255,255,.85);font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;padding:8px 12px;border:1px solid rgba(192,132,252,.35);border-radius:3px;z-index:50;box-shadow:0 4px 20px rgba(0,0,0,.7);width:240px;line-height:1.55;white-space:normal;}
+.tooltip::after{content:'';position:absolute;top:100%;right:10px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid rgba(192,132,252,.4);}
+.rep-badge.open .tooltip{display:block;}
 
-    /* ── ENTRY FORM ──────────────────────────────────────── */
-    .entry-form {
-      padding: 24px 28px 20px;
-      border-bottom: 1px solid var(--gold-dim);
-    }
-    .entry-form h2 {
-      font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.15em; color: var(--ink-mid);
-      text-transform: uppercase; margin-bottom: 16px;
-    }
-    .form-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
-    .form-group { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 140px; }
-    .form-group label {
-      font-family: 'Cinzel', serif; font-size: 9px; font-weight: 700;
-      letter-spacing: 0.15em; color: var(--ink-light); text-transform: uppercase;
-    }
-    .form-group input, .form-group select {
-      font-family: 'Cormorant Garamond', serif; font-size: 16px;
-      color: var(--ink);
-      background: #fff; border: 1px solid rgba(201,168,76,0.4);
-      border-radius: 2px; padding: 8px 10px;
-      outline: none; transition: border-color .2s;
-      -webkit-appearance: none; appearance: none;
-    }
-    .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
-    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23C9A84C'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 28px; }
+/* SUBMIT */
+.submit-row{margin-top:22px;padding-top:18px;border-top:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.submit-info{font-family:'Cormorant Garamond',serif;font-size:14px;color:#888;font-style:italic;}
+.btn-submit{background:var(--gold);color:var(--black);border:none;padding:12px 24px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;cursor:pointer;font-weight:700;transition:all .2s;}
+.btn-submit:disabled{background:#ccc;cursor:not-allowed;}
+.btn-submit:not(:disabled):hover{background:var(--gold-l);}
 
-    /* ── FORM SUBMITTED STATE ────────────────────────────── */
-    .submitted-banner {
-      background: linear-gradient(135deg, #1a2e1a, #0f1f0f);
-      border: 1px solid #2a5c2a;
-      border-radius: 2px; padding: 14px 18px;
-      display: none; align-items: center; gap: 12px; margin-top: 12px;
-    }
-    .submitted-banner.visible { display: flex; }
-    .submitted-banner .check-icon {
-      width: 28px; height: 28px; background: #2a5c2a; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-      color: #6fcf6f; font-size: 14px;
-    }
-    .submitted-banner p { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.08em; color: #6fcf6f; }
-    .submitted-banner p small { display: block; font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: 0; color: #4a8c4a; margin-top: 2px; }
+/* LEADERBOARD */
+.lb-body{background:var(--charcoal);padding:26px 36px 38px;}
+.lb-title{font-family:'Cinzel',serif;color:var(--gold-l);font-size:12px;letter-spacing:4px;text-align:center;margin-bottom:4px;}
+.lb-sub{text-align:center;font-family:'Cormorant Garamond',serif;color:rgba(201,168,76,.5);font-size:13px;font-style:italic;margin-bottom:22px;}
+.lb-empty{text-align:center;font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.3);font-size:14px;font-style:italic;padding:20px 0;}
+.lb-grid{display:grid;gap:9px;}
+.lb-row{display:flex;align-items:center;gap:13px;background:rgba(255,255,255,.035);border:1px solid rgba(201,168,76,.1);padding:12px 16px;transition:all .3s;}
+.lb-row.me{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.4);}
+.lb-rank{font-family:'Cinzel',serif;color:var(--gold);font-size:14px;font-weight:700;width:32px;text-align:center;flex-shrink:0;}
+.lb-rank.top{font-size:20px;}
+.lb-info{flex:1;min-width:0;}
+.lb-name-row{display:flex;align-items:center;gap:7px;margin-bottom:5px;}
+.lb-name{font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.88);font-size:16px;font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.lb-name.me{color:var(--gold-l);}
+.lb-handle{font-family:'Cinzel',serif;color:rgba(201,168,76,.5);font-size:9px;letter-spacing:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.lb-you{font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:2px 4px;flex-shrink:0;}
+.lb-track{height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
+.lb-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold-l));border-radius:2px;transition:width .8s ease;}
+.lb-score{text-align:right;flex-shrink:0;}
+.lb-pts{font-family:'Cinzel',serif;color:var(--gold);font-size:22px;font-weight:700;line-height:1;}
+.lb-correct{font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.32);font-size:11px;font-style:italic;margin-top:1px;}
+.winners-section{margin-top:24px;border-top:1px solid rgba(201,168,76,.15);padding-top:20px;}
+.winners-lbl{font-family:'Cinzel',serif;color:var(--gold);font-size:8px;letter-spacing:3px;margin-bottom:10px;opacity:.6;}
+.winners-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px 14px;}
+.winner-row{display:flex;gap:7px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.winner-cat{font-family:'Cinzel',serif;font-size:7px;letter-spacing:1px;color:rgba(201,168,76,.4);flex:0 0 auto;padding-top:3px;max-width:105px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-transform:uppercase;}
+.winner-name{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,.7);font-style:italic;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
-    /* ── GOLD RULE ───────────────────────────────────────── */
-    .gold-rule {
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold), transparent);
-      margin: 0;
-    }
+/* FOOTER */
+.footer{background:var(--black);padding:13px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(201,168,76,.2);flex-wrap:wrap;gap:8px;}
+.foot-logo{font-family:'Cinzel',serif;color:var(--gold);font-size:9px;letter-spacing:4px;opacity:.5;cursor:default;}
+.foot-osw{font-family:'Cormorant Garamond',serif;color:rgba(192,132,252,.4);font-size:12px;font-style:italic;}
+.foot-osw b{font-style:normal;color:rgba(192,132,252,.6);}
+.foot-date{font-family:'Cormorant Garamond',serif;color:rgba(201,168,76,.3);font-size:11px;font-style:italic;}
+.playing-as{font-family:'Cormorant Garamond',serif;color:rgba(201,168,76,.6);font-size:13px;font-style:italic;}
+.playing-as b{font-style:normal;color:var(--gold-l);}
 
-    /* ── CATEGORIES ──────────────────────────────────────── */
-    .categories { padding: 0 0 8px; }
+/* ADMIN */
+.admin-body{background:var(--charcoal);padding:26px 36px 40px;}
+.admin-h{font-family:'Cinzel',serif;color:var(--gold);font-size:11px;letter-spacing:3px;margin-bottom:20px;}
+.admin-cat{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.1);padding:10px 14px;margin-bottom:8px;}
+.admin-cat-lbl{font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(201,168,76,.45);text-transform:uppercase;margin-bottom:6px;}
+.admin-row{display:flex;gap:8px;align-items:center;}
+.admin-sel{flex:1;background:#0d0d0d;color:rgba(255,255,255,.8);border:1px solid rgba(201,168,76,.2);font-family:'Cormorant Garamond',serif;font-size:14px;padding:6px 8px;outline:none;font-style:italic;}
+.btn-admin-save{font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;background:rgba(201,168,76,.15);color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:7px 12px;cursor:pointer;white-space:nowrap;transition:background .2s;}
+.btn-admin-save:hover{background:rgba(201,168,76,.25);}
+.btn-admin-save.saved{color:#6fcf6f;border-color:#2a5c2a;background:rgba(40,120,40,.15);}
+.admin-won{font-family:'Cinzel',serif;font-size:8px;color:var(--gold);padding-left:4px;white-space:nowrap;}
+.admin-lock-note{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,.3);font-size:13px;text-align:center;padding:20px 0;}
+.skel{height:40px;background:linear-gradient(90deg,#1a1a1a 25%,#242424 50%,#1a1a1a 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;margin-bottom:8px;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
-    .category-block { padding: 0; }
-
-    .category-header {
-      padding: 18px 28px 10px;
-      display: flex; align-items: baseline; gap: 12px;
-    }
-    .category-number {
-      font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700;
-      letter-spacing: 0.1em; color: var(--gold); opacity: 0.6;
-      min-width: 24px;
-    }
-    .category-name {
-      font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.12em; color: var(--ink); text-transform: uppercase;
-    }
-    .category-check {
-      margin-left: auto; width: 18px; height: 18px; border-radius: 50%;
-      background: transparent; border: 1.5px solid rgba(201,168,76,0.3);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; color: transparent; flex-shrink: 0;
-      transition: background .2s, border-color .2s, color .2s;
-    }
-    .category-block.picked .category-check {
-      background: var(--gold); border-color: var(--gold); color: #fff;
-    }
-
-    .nominees-list { padding: 0 28px 16px; display: flex; flex-direction: column; gap: 4px; }
-
-    .nominee-row {
-      display: flex; align-items: center; gap: 10px;
-      padding: 9px 12px; border-radius: 2px;
-      cursor: pointer; transition: background .15s;
-      border-left: 3px solid transparent;
-      position: relative;
-    }
-    .nominee-row:hover { background: rgba(201,168,76,0.07); }
-    .nominee-row.selected {
-      background: rgba(201,168,76,0.12);
-      border-left-color: var(--gold);
-    }
-    .nominee-row.winner {
-      background: rgba(201,168,76,0.18);
-      border-left-color: var(--gold-bright);
-    }
-    .nominee-row.correct { background: rgba(40,120,40,0.12); border-left-color: #4a9c4a; }
-    .nominee-row.incorrect { opacity: 0.55; }
-
-    .nominee-radio {
-      width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0;
-      border: 1.5px solid rgba(201,168,76,0.4);
-      display: flex; align-items: center; justify-content: center;
-      transition: border-color .15s;
-    }
-    .nominee-row.selected .nominee-radio { border-color: var(--gold); }
-    .nominee-row.selected .nominee-radio::after,
-    .nominee-row.winner .nominee-radio::after {
-      content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
-    }
-    .nominee-row.correct .nominee-radio { border-color: #4a9c4a; }
-    .nominee-row.correct .nominee-radio::after { background: #4a9c4a; }
-
-    .nominee-label {
-      font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400;
-      color: var(--ink); flex: 1; line-height: 1.3;
-    }
-    .nominee-row.winner .nominee-label { font-weight: 600; }
-
-    .winner-star {
-      font-size: 11px; color: var(--gold); display: none;
-      font-family: 'Cinzel', serif; letter-spacing: 0.05em; white-space: nowrap;
-    }
-    .nominee-row.winner .winner-star { display: block; }
-
-    .badges { display: flex; flex-wrap: wrap; gap: 3px; }
-
-    .badge {
-      display: inline-flex; align-items: center; gap: 3px;
-      padding: 2px 6px; border-radius: 2px;
-      font-family: 'Cinzel', serif; font-size: 8px; font-weight: 700;
-      letter-spacing: 0.1em; white-space: nowrap;
-      border-left: 2px solid;
-      cursor: default; position: relative;
-    }
-    .badge-letter { font-size: 9px; font-weight: 900; }
-
-    /* badge colors applied via inline style */
-
-    /* ── LOCKED STATE ────────────────────────────────────── */
-    .locked-overlay {
-      display: none;
-      background: rgba(254,252,247,0.9);
-      position: absolute; inset: 0; z-index: 10;
-      align-items: center; justify-content: center;
-      flex-direction: column; gap: 8px;
-      font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.1em;
-      color: var(--ink-mid);
-    }
-    body.locked .locked-overlay { display: flex; }
-    body.locked .nominee-row { pointer-events: none; }
-    body.locked .submit-btn { display: none; }
-
-    /* ── SUBMIT AREA ─────────────────────────────────────── */
-    .submit-area {
-      padding: 20px 28px 28px;
-      border-top: 1px solid var(--gold-dim);
-    }
-    .submit-btn {
-      width: 100%;
-      font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--ink); background: var(--gold);
-      border: none; border-radius: 2px; padding: 14px 24px;
-      cursor: pointer; transition: background .2s, transform .1s;
-    }
-    .submit-btn:hover { background: var(--gold-bright); }
-    .submit-btn:active { transform: scale(0.99); }
-    .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
-    .submit-hint {
-      text-align: center; margin-top: 10px;
-      font-size: 13px; color: var(--ink-light); font-style: italic;
-    }
-    .lock-notice {
-      text-align: center; padding: 12px;
-      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.1em;
-      color: var(--ink-light); border-top: 1px solid var(--gold-dim);
-    }
-
-    /* ── NEXT CATEGORY BUTTON ────────────────────────────── */
-    #next-btn {
-      position: fixed; bottom: 24px; right: 20px; z-index: 200;
-      font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.1em;
-      background: var(--gold); color: var(--ink);
-      border: none; border-radius: 2px;
-      padding: 10px 18px; cursor: pointer;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-      opacity: 0; pointer-events: none;
-      transition: opacity .3s;
-    }
-    #next-btn.visible { opacity: 1; pointer-events: auto; }
-
-    /* ── LEADERBOARD ─────────────────────────────────────── */
-    .lb-wrap { max-width: 720px; margin: 0 auto; padding: 32px 16px 80px; }
-
-    .lb-header {
-      font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 20px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .lb-header button {
-      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.4); background: none; border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 2px; padding: 4px 10px; cursor: pointer;
-      transition: color .2s, border-color .2s;
-    }
-    .lb-header button:hover { color: var(--gold); border-color: var(--gold-dim); }
-
-    .lb-error {
-      display: none; background: rgba(180,40,40,0.15); border: 1px solid rgba(180,40,40,0.3);
-      border-radius: 2px; padding: 16px 20px;
-      font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.08em;
-      color: #e88; margin-bottom: 16px;
-      align-items: center; gap: 12px;
-    }
-    .lb-error.visible { display: flex; }
-    .lb-error button {
-      margin-left: auto; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.1em;
-      color: #e88; background: none; border: 1px solid rgba(180,40,40,0.4);
-      border-radius: 2px; padding: 4px 10px; cursor: pointer; white-space: nowrap;
-    }
-
-    /* skeleton */
-    .skel-row {
-      height: 52px; border-radius: 2px; margin-bottom: 6px;
-      background: linear-gradient(90deg, #181818 25%, #222 50%, #181818 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
-    }
-    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-
-    .lb-table { width: 100%; border-collapse: collapse; }
-    .lb-table th {
-      font-family: 'Cinzel', serif; font-size: 9px; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      color: rgba(255,255,255,0.35); text-align: left;
-      padding: 6px 12px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .lb-table td {
-      padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-family: 'Cormorant Garamond', serif; font-size: 16px; color: rgba(255,255,255,0.8);
-      vertical-align: middle;
-    }
-    .lb-table tr:hover td { background: rgba(255,255,255,0.03); }
-    .lb-rank { font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; color: var(--gold); width: 32px; }
-    .lb-name { font-weight: 500; color: #fff; }
-    .lb-handle { color: rgba(255,255,255,0.45); font-size: 14px; display: flex; align-items: center; gap: 5px; }
-    .lb-score { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--gold); text-align: right; white-space: nowrap; }
-    .lb-score small { font-size: 10px; font-weight: 400; color: rgba(255,255,255,0.3); display: block; text-align: right; }
-
-    .platform-icon { width: 14px; height: 14px; opacity: 0.6; flex-shrink: 0; }
-    .yours-row td { background: rgba(201,168,76,0.06); }
-    .yours-row .lb-name::after { content: ' (you)'; font-size: 12px; font-weight: 400; color: var(--gold); }
-
-    .winners-none {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 16px; color: rgba(255,255,255,0.3); text-align: center;
-      padding: 40px 20px;
-    }
-
-    /* ── ADMIN ───────────────────────────────────────────── */
-    .admin-wrap { max-width: 600px; margin: 0 auto; padding: 32px 16px 80px; }
-    .admin-login {
-      background: #111; border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 2px; padding: 32px;
-    }
-    .admin-login h2 {
-      font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.15em;
-      color: var(--gold); margin-bottom: 20px;
-    }
-    .admin-login input {
-      width: 100%; font-family: 'Cormorant Garamond', serif; font-size: 16px;
-      background: #0a0a0a; color: #fff; border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 2px; padding: 10px 14px; margin-bottom: 12px; outline: none;
-    }
-    .admin-login input:focus { border-color: var(--gold-dim); }
-    .admin-btn {
-      font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      background: var(--gold); color: var(--ink); border: none; border-radius: 2px;
-      padding: 10px 20px; cursor: pointer; transition: background .2s;
-    }
-    .admin-btn:hover { background: var(--gold-bright); }
-    .admin-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    .admin-err { color: #e88; font-size: 13px; margin-top: 8px; font-family: 'Cormorant Garamond', serif; }
-
-    .admin-panel { display: none; }
-    .admin-panel.visible { display: block; }
-    .admin-panel h2 {
-      font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 0.15em;
-      color: var(--gold); margin-bottom: 24px;
-    }
-    .admin-category {
-      background: #111; border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 2px; padding: 16px; margin-bottom: 10px;
-    }
-    .admin-category label {
-      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.1em;
-      text-transform: uppercase; color: rgba(255,255,255,0.5);
-      display: block; margin-bottom: 8px;
-    }
-    .admin-row { display: flex; gap: 8px; align-items: center; }
-    .admin-row select {
-      flex: 1; font-family: 'Cormorant Garamond', serif; font-size: 15px;
-      background: #0a0a0a; color: #fff; border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 2px; padding: 7px 10px; outline: none; cursor: pointer;
-    }
-    .admin-row select:focus { border-color: var(--gold-dim); }
-    .admin-save-btn {
-      font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      background: rgba(201,168,76,0.15); color: var(--gold);
-      border: 1px solid rgba(201,168,76,0.3); border-radius: 2px;
-      padding: 7px 14px; cursor: pointer; white-space: nowrap;
-      transition: background .2s;
-    }
-    .admin-save-btn:hover { background: rgba(201,168,76,0.25); }
-    .admin-save-btn.saved { color: #6fcf6f; border-color: #2a5c2a; background: rgba(40,120,40,0.15); }
-    .admin-winner-badge {
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.1em;
-      color: var(--gold); white-space: nowrap; padding-left: 4px;
-    }
-
-    /* ── FOOTER ──────────────────────────────────────────── */
-    footer {
-      background: #000; border-top: 1px solid rgba(201,168,76,0.15);
-      padding: 28px 20px; text-align: center;
-    }
-    footer p {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 15px; color: rgba(255,255,255,0.3); margin-bottom: 6px;
-    }
-    footer p strong { color: rgba(255,255,255,0.5); font-style: normal; }
-    .footer-dot {
-      font-size: 20px; color: rgba(255,255,255,0.1); cursor: pointer;
-      margin-top: 12px; display: inline-block; user-select: none;
-      transition: color .2s;
-    }
-    .footer-dot:hover { color: var(--gold); }
-
-    /* ── MISC ────────────────────────────────────────────── */
-    @media (max-width: 480px) {
-      .osw-strip { padding: 12px 16px; }
-      .osw-legend { padding: 8px 16px; }
-      .entry-form { padding: 18px 16px; }
-      .category-header { padding: 14px 16px 8px; }
-      .nominees-list { padding: 0 16px 12px; }
-      .submit-area { padding: 16px 16px 24px; }
-      .ballot-wrap { padding: 16px 10px 60px; }
-    }
-  </style>
+@media(max-width:620px){
+  .bp-grid{grid-template-columns:repeat(2,1fr);}
+  .grid2{grid-template-columns:1fr;}
+  .cat-block{border-right:none!important;}
+  .hdr,.osw-strip,.ballot-body,.lb-body,.footer,.prog-bar,.fetch-bar,.landing,.entry-body,.admin-body{padding-left:18px;padding-right:18px;}
+  .winners-grid{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav id="nav">
-  <a class="logo" href="#">#Oscars<span>SoWhite</span> <span style="color:rgba(255,255,255,0.4);font-weight:400">2026</span></a>
-  <div class="nav-tabs">
-    <button class="nav-tab active" onclick="showSection('ballot')">Ballot</button>
-    <button class="nav-tab" onclick="showSection('leaderboard')">Results</button>
-  </div>
-</nav>
-
-<!-- PROGRESS BAR -->
-<div id="progress-wrap" style="display:none">
-  <div id="progress-bar-track"><div id="progress-bar-fill"></div></div>
-  <div id="progress-label">0 / 23</div>
-  <div id="progress-score"></div>
-</div>
-
-<!-- MAIN -->
-<div id="main">
-
-  <!-- BALLOT SECTION -->
-  <section id="ballot-section" class="section active">
-    <div class="ballot-wrap">
-      <div class="ballot-paper">
-
-        <!-- OSW STRIP -->
-        <div class="osw-strip">
-          <div>
-            <div class="osw-title">#Oscars<span>SoWhite</span></div>
-            <div class="osw-year">98th Academy Awards · March 15, 2026</div>
-          </div>
-          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.08em;color:rgba(255,255,255,0.5);text-align:right;line-height:1.8">
-            Created by<br><strong style="color:#E8B4FF;font-size:12px">April Reign</strong>
-          </div>
-        </div>
-
-        <!-- LEGEND -->
-        <div class="osw-legend" id="badge-legend"></div>
-
-        <!-- ENTRY FORM -->
-        <div class="entry-form">
-          <h2>Your Information</h2>
-          <div class="form-row">
-            <div class="form-group" style="flex:2;min-width:180px">
-              <label>Display Name</label>
-              <input type="text" id="input-name" placeholder="Your name" maxlength="100" autocomplete="name">
-            </div>
-            <div class="form-group" style="flex:1;min-width:140px">
-              <label>Platform</label>
-              <select id="input-platform">
-                <option value="twitter">Twitter / X</option>
-                <option value="instagram">Instagram</option>
-                <option value="threads">Threads</option>
-                <option value="tiktok">TikTok</option>
-                <option value="bluesky">Bluesky</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group" style="flex:1;min-width:140px">
-              <label>Handle</label>
-              <input type="text" id="input-handle" placeholder="@handle" maxlength="50" autocomplete="off">
-            </div>
-          </div>
-          <div id="submitted-banner" class="submitted-banner">
-            <div class="check-icon">✓</div>
-            <p>Ballot submitted! <small id="ballot-id-note">Picks are saved.</small></p>
-          </div>
-        </div>
-
-        <div class="gold-rule"></div>
-
-        <!-- CATEGORIES -->
-        <div class="categories" id="categories-list"></div>
-
-        <!-- SUBMIT -->
-        <div class="submit-area" id="submit-area">
-          <button class="submit-btn" id="submit-btn" onclick="submitBallot()">Submit My Ballot</button>
-          <p class="submit-hint" id="submit-hint">Pick all 23 categories, then submit.</p>
-          <p class="lock-notice" id="lock-notice"></p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERBOARD SECTION -->
-  <section id="leaderboard-section" class="section">
-    <div class="lb-wrap">
-      <div class="lb-header">
-        <span>Live Leaderboard</span>
-        <button onclick="loadLeaderboard()">↻ Refresh</button>
-      </div>
-      <div class="lb-error" id="lb-error">
-        Unable to reach live results — check your connection.
-        <button onclick="loadLeaderboard()">Try again</button>
-      </div>
-      <div id="lb-content"></div>
-    </div>
-  </section>
-
-  <!-- ADMIN SECTION -->
-  <section id="admin-section" class="section">
-    <div class="admin-wrap">
-      <div id="admin-login-box" class="admin-login">
-        <h2>Admin — Enter Winners</h2>
-        <input type="password" id="admin-pw-input" placeholder="Password" onkeydown="if(event.key==='Enter')adminLogin()">
-        <br>
-        <button class="admin-btn" onclick="adminLogin()">Unlock</button>
-        <p class="admin-err" id="admin-err"></p>
-      </div>
-      <div id="admin-panel" class="admin-panel">
-        <h2>Enter Winners</h2>
-        <div id="admin-categories"></div>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <p><em>#OscarsSoWhite was created by <strong>April Reign</strong> in 2015.</em></p>
-  <p style="font-size:13px;margin-top:4px">Ten years later, the work continues.</p>
-  <span class="footer-dot" onclick="showSection('admin')" title="Admin">·</span>
-</footer>
-
-<!-- NEXT CATEGORY BUTTON -->
-<button id="next-btn" onclick="goToNextCategory()">Next Category →</button>
-
+<div id="app"></div>
 <script>
-// ── BADGE DEFINITIONS ──────────────────────────────────────────
-const BADGES = {
-  BLACK:         { label: 'Black/African American', color: '#7B3FA0', bg: 'rgba(123,63,160,0.12)', letter: 'B' },
-  WOMEN:         { label: 'Women',                  color: '#C2185B', bg: 'rgba(194,24,91,0.12)',  letter: 'W' },
-  LATINO:        { label: 'Latino/Hispanic',        color: '#E65100', bg: 'rgba(230,81,0,0.12)',   letter: 'L' },
-  ASIAN_PI:      { label: 'Asian/Pacific Islander', color: '#00838F', bg: 'rgba(0,131,143,0.12)', letter: 'A' },
-  INDIGENOUS:    { label: 'Indigenous',             color: '#6D4C41', bg: 'rgba(109,76,65,0.12)',  letter: 'I' },
-  LGBTQ:         { label: 'LGBTQ+',                 color: '#AD1457', bg: 'rgba(173,20,87,0.12)',  letter: '+' },
-  INTERNATIONAL: { label: 'International',          color: '#1565C0', bg: 'rgba(21,101,192,0.12)', letter: 'G' },
-  IMMIGRANT:     { label: 'Immigrant',              color: '#2E7D32', bg: 'rgba(46,125,50,0.12)',  letter: 'IM' },
-  FAITH:         { label: 'Faith',                  color: '#BF8A00', bg: 'rgba(191,138,0,0.12)',  letter: 'F' },
-  NEURO:         { label: 'Neurodivergent',         color: '#283593', bg: 'rgba(40,53,147,0.12)',  letter: 'N' },
-};
+// ── CONFIG ──
+const LOCK_TIME = new Date("2026-03-16T00:00:00Z"); // 4pm PT / 7pm ET March 15
+const TOTAL_CATS = 24;
 
-// ── PLATFORM ICONS ─────────────────────────────────────────────
-const PLATFORM_ICONS = {
-  twitter:   `<svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
-  instagram: `<svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>`,
-  threads:   `<svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 011.987.048v-.977c0-1.531-.83-2.339-2.466-2.407h-.044c-.98 0-2.208.31-2.978 1.24l-1.498-1.247C8.644 6.727 10.19 6 12.27 6h.073c2.754.105 4.396 1.698 4.396 4.264v5.212c.062.088.122.18.178.273 1.107 1.798 1.213 4.218-.49 5.893C15.047 23.146 13.654 24 12.185 24zm1.563-9.908c-1.498.015-2.373.455-2.795 1.339-.303.627-.241 1.438.162 1.969.399.523.996.774 1.726.756 1.137-.027 2.42-.749 2.838-3.088a8.944 8.944 0 00-1.93-.976z"/></svg>`,
-  tiktok:    `<svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.84 4.84 0 01-1-.05z"/></svg>`,
-  bluesky:   `<svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 01-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.204-.659-.299-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>`,
-  other:     `<svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>`,
-};
-
-// ── CATEGORIES (BROADCAST ORDER) ───────────────────────────────
-const CATEGORIES = [
-  {
-    id: 'animated-short', label: 'Animated Short Film',
-    nominees: [
-      { id: 'beautiful-men',       label: 'Beautiful Men',                    badges: ['LGBTQ'] },
-      { id: 'in-shadow-cypress',   label: 'In the Shadow of the Cypress',      badges: ['INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'magic-candies',       label: 'Magic Candies',                     badges: ['INTERNATIONAL', 'ASIAN_PI'] },
-      { id: 'wander-wonder',       label: 'Wander to Wonder',                  badges: [] },
-      { id: 'yuck',                label: 'Yuck!',                             badges: ['INTERNATIONAL'] },
-    ],
-  },
-  {
-    id: 'live-action-short', label: 'Live Action Short Film',
-    nominees: [
-      { id: 'anuja',              label: 'Anuja',                              badges: ['INTERNATIONAL', 'ASIAN_PI', 'WOMEN'] },
-      { id: 'last-ranger',        label: 'The Last Ranger',                    badges: ['INTERNATIONAL', 'BLACK'] },
-      { id: 'man-remain-silent',  label: 'The Man Who Could Not Remain Silent', badges: ['INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'a-lien',             label: 'A Lien',                             badges: ['INTERNATIONAL', 'ASIAN_PI', 'IMMIGRANT'] },
-      { id: 'not-a-robot',        label: "I'm Not a Robot",                    badges: ['NEURO'] },
-    ],
-  },
-  {
-    id: 'documentary-short', label: 'Documentary Short Film',
-    nominees: [
-      { id: 'death-by-numbers',         label: 'Death by Numbers',                 badges: ['BLACK'] },
-      { id: 'i-am-ready-warden',        label: 'I Am Ready, Warden',               badges: ['BLACK'] },
-      { id: 'incident',                 label: 'Incident',                         badges: [] },
-      { id: 'instruments-beating-heart',label: 'Instruments of a Beating Heart',   badges: ['NEURO'] },
-      { id: 'only-girl-orchestra',      label: 'The Only Girl in the Orchestra',    badges: ['WOMEN'] },
-    ],
-  },
-  {
-    id: 'documentary-feature', label: 'Documentary Feature Film',
-    nominees: [
-      { id: 'black-box-diaries', label: 'Black Box Diaries',              badges: ['WOMEN', 'INTERNATIONAL', 'ASIAN_PI'] },
-      { id: 'no-other-land',     label: 'No Other Land',                  badges: ['INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'porcelain-war',     label: 'Porcelain War',                  badges: ['INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'soundtrack-coup',   label: "Soundtrack to a Coup d'Etat",    badges: ['BLACK', 'INTERNATIONAL'] },
-      { id: 'sugarcane',         label: 'Sugarcane',                      badges: ['INDIGENOUS'] },
-    ],
-  },
-  {
-    id: 'international-feature', label: 'International Feature Film',
-    nominees: [
-      { id: 'emilia-perez-intl', label: 'Emilia Pérez (France)',                  badges: ['LGBTQ', 'LATINO', 'INTERNATIONAL', 'WOMEN'] },
-      { id: 'flow-intl',         label: 'Flow (Latvia)',                           badges: ['INTERNATIONAL'] },
-      { id: 'girl-needle',       label: 'The Girl with the Needle (Denmark)',      badges: ['INTERNATIONAL', 'WOMEN'] },
-      { id: 'im-still-here-intl',label: "I'm Still Here (Brazil)",                badges: ['INTERNATIONAL', 'LATINO', 'IMMIGRANT'] },
-      { id: 'seed-sacred-fig',   label: 'The Seed of the Sacred Fig (Germany)',    badges: ['INTERNATIONAL', 'IMMIGRANT', 'WOMEN'] },
-    ],
-  },
-  {
-    id: 'animated-feature', label: 'Animated Feature Film',
-    nominees: [
-      { id: 'flow-anim',     label: 'Flow',                                   badges: ['INTERNATIONAL'] },
-      { id: 'inside-out-2',  label: 'Inside Out 2',                           badges: ['WOMEN', 'NEURO'] },
-      { id: 'memoir-snail',  label: 'Memoir of a Snail',                      badges: ['INTERNATIONAL', 'WOMEN', 'NEURO'] },
-      { id: 'wild-robot',    label: 'The Wild Robot',                         badges: ['WOMEN'] },
-      { id: 'wallace-gromit',label: 'Wallace & Gromit: Vengeance Most Fowl',  badges: ['INTERNATIONAL'] },
-    ],
-  },
-  {
-    id: 'original-score', label: 'Original Score',
-    nominees: [
-      { id: 'brutalist-score',    label: 'The Brutalist',   badges: ['IMMIGRANT'] },
-      { id: 'conclave-score',     label: 'Conclave',        badges: ['FAITH'] },
-      { id: 'emilia-score',       label: 'Emilia Pérez',    badges: ['LGBTQ', 'LATINO', 'WOMEN'] },
-      { id: 'wicked-score',       label: 'Wicked',          badges: ['WOMEN', 'BLACK'] },
-      { id: 'wild-robot-score',   label: 'The Wild Robot',  badges: ['WOMEN'] },
-    ],
-  },
-  {
-    id: 'original-song', label: 'Original Song',
-    nominees: [
-      { id: 'el-mal',       label: '"El Mal" — Emilia Pérez',              badges: ['LGBTQ', 'LATINO', 'WOMEN'] },
-      { id: 'journey',      label: '"The Journey" — The Six Triple Eight', badges: ['BLACK', 'WOMEN'] },
-      { id: 'like-a-bird',  label: '"Like A Bird" — Sing Sing',            badges: ['BLACK'] },
-      { id: 'mi-camino',    label: '"Mi Camino" — Emilia Pérez',           badges: ['LGBTQ', 'LATINO', 'WOMEN'] },
-      { id: 'never-too-late',label: '"Never Too Late" — Elton John: Never Too Late', badges: ['LGBTQ'] },
-    ],
-  },
-  {
-    id: 'film-editing', label: 'Film Editing',
-    nominees: [
-      { id: 'anora-edit',    label: 'Anora',        badges: ['WOMEN', 'IMMIGRANT'] },
-      { id: 'brutalist-edit',label: 'The Brutalist', badges: ['IMMIGRANT'] },
-      { id: 'conclave-edit', label: 'Conclave',      badges: ['FAITH'] },
-      { id: 'emilia-edit',   label: 'Emilia Pérez',  badges: ['LGBTQ', 'LATINO', 'WOMEN', 'INTERNATIONAL'] },
-      { id: 'wicked-edit',   label: 'Wicked',        badges: ['WOMEN', 'BLACK'] },
-    ],
-  },
-  {
-    id: 'sound', label: 'Sound',
-    nominees: [
-      { id: 'complete-unknown-sound', label: 'A Complete Unknown', badges: [] },
-      { id: 'dune-two-sound',         label: 'Dune: Part Two',     badges: [] },
-      { id: 'emilia-sound',           label: 'Emilia Pérez',       badges: ['LGBTQ', 'LATINO', 'WOMEN', 'INTERNATIONAL'] },
-      { id: 'wicked-sound',           label: 'Wicked',             badges: ['WOMEN', 'BLACK'] },
-      { id: 'wild-robot-sound',       label: 'The Wild Robot',     badges: ['WOMEN'] },
-    ],
-  },
-  {
-    id: 'production-design', label: 'Production Design',
-    nominees: [
-      { id: 'brutalist-pd', label: 'The Brutalist', badges: ['IMMIGRANT'] },
-      { id: 'conclave-pd',  label: 'Conclave',       badges: ['FAITH'] },
-      { id: 'dune-two-pd',  label: 'Dune: Part Two', badges: [] },
-      { id: 'nosferatu-pd', label: 'Nosferatu',       badges: ['WOMEN'] },
-      { id: 'wicked-pd',    label: 'Wicked',          badges: ['WOMEN', 'BLACK'] },
-    ],
-  },
-  {
-    id: 'cinematography', label: 'Cinematography',
-    nominees: [
-      { id: 'brutalist-cin', label: 'The Brutalist', badges: ['IMMIGRANT'] },
-      { id: 'dune-two-cin',  label: 'Dune: Part Two', badges: [] },
-      { id: 'emilia-cin',    label: 'Emilia Pérez',   badges: ['LGBTQ', 'LATINO', 'WOMEN', 'INTERNATIONAL'] },
-      { id: 'maria-cin',     label: 'Maria',          badges: ['LATINO', 'WOMEN', 'INTERNATIONAL'] },
-      { id: 'nosferatu-cin', label: 'Nosferatu',      badges: ['WOMEN'] },
-    ],
-  },
-  {
-    id: 'costume-design', label: 'Costume Design',
-    nominees: [
-      { id: 'complete-unknown-cos', label: 'A Complete Unknown', badges: [] },
-      { id: 'conclave-cos',         label: 'Conclave',           badges: ['FAITH'] },
-      { id: 'nosferatu-cos',        label: 'Nosferatu',          badges: ['WOMEN'] },
-      { id: 'wicked-cos',           label: 'Wicked',             badges: ['WOMEN', 'BLACK'] },
-      { id: 'maria-cos',            label: 'Maria',              badges: ['LATINO', 'WOMEN', 'INTERNATIONAL'] },
-    ],
-  },
-  {
-    id: 'makeup-hairstyling', label: 'Makeup and Hairstyling',
-    nominees: [
-      { id: 'diff-man-mh',   label: 'A Different Man', badges: ['NEURO'] },
-      { id: 'emilia-mh',     label: 'Emilia Pérez',    badges: ['LGBTQ', 'LATINO', 'WOMEN', 'INTERNATIONAL'] },
-      { id: 'nosferatu-mh',  label: 'Nosferatu',       badges: ['WOMEN'] },
-      { id: 'substance-mh',  label: 'The Substance',   badges: ['WOMEN'] },
-      { id: 'wicked-mh',     label: 'Wicked',          badges: ['WOMEN', 'BLACK'] },
-    ],
-  },
-  {
-    id: 'visual-effects', label: 'Visual Effects',
-    nominees: [
-      { id: 'alien-romulus-vfx', label: 'Alien: Romulus',                    badges: ['WOMEN'] },
-      { id: 'better-man-vfx',    label: 'Better Man',                        badges: [] },
-      { id: 'dune-two-vfx',      label: 'Dune: Part Two',                    badges: [] },
-      { id: 'kop-apes-vfx',      label: 'Kingdom of the Planet of the Apes', badges: [] },
-      { id: 'wicked-vfx',        label: 'Wicked',                            badges: ['WOMEN', 'BLACK'] },
-    ],
-  },
-  {
-    id: 'adapted-screenplay', label: 'Adapted Screenplay',
-    nominees: [
-      { id: 'complete-unknown-scr', label: 'A Complete Unknown', badges: [] },
-      { id: 'conclave-scr',         label: 'Conclave',           badges: ['FAITH'] },
-      { id: 'emilia-scr',           label: 'Emilia Pérez',       badges: ['LGBTQ', 'LATINO', 'WOMEN', 'INTERNATIONAL'] },
-      { id: 'nickel-boys-scr',      label: 'Nickel Boys',        badges: ['BLACK'] },
-      { id: 'sing-sing-scr',        label: 'Sing Sing',          badges: ['BLACK'] },
-    ],
-  },
-  {
-    id: 'original-screenplay', label: 'Original Screenplay',
-    nominees: [
-      { id: 'anora-orig',     label: 'Anora',        badges: ['WOMEN', 'IMMIGRANT'] },
-      { id: 'brutalist-orig', label: 'The Brutalist', badges: ['IMMIGRANT', 'FAITH'] },
-      { id: 'real-pain-orig', label: 'A Real Pain',   badges: ['IMMIGRANT', 'FAITH'] },
-      { id: 'sept-5-orig',    label: 'September 5',   badges: ['INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'substance-orig', label: 'The Substance', badges: ['WOMEN'] },
-    ],
-  },
-  {
-    id: 'supporting-actress', label: 'Actress in a Supporting Role',
-    nominees: [
-      { id: 'monica-barbaro',       label: 'Monica Barbaro — A Complete Unknown',   badges: ['WOMEN'] },
-      { id: 'felicity-jones',       label: 'Felicity Jones — The Brutalist',        badges: ['WOMEN', 'INTERNATIONAL'] },
-      { id: 'pamela-anderson',      label: 'Pamela Anderson — The Last Showgirl',   badges: ['WOMEN'] },
-      { id: 'isabella-rossellini',  label: 'Isabella Rossellini — Conclave',        badges: ['WOMEN', 'INTERNATIONAL', 'IMMIGRANT', 'FAITH'] },
-      { id: 'zoe-saldana',          label: 'Zoe Saldana — Emilia Pérez',            badges: ['WOMEN', 'LATINO', 'BLACK'] },
-    ],
-  },
-  {
-    id: 'supporting-actor', label: 'Actor in a Supporting Role',
-    nominees: [
-      { id: 'yura-borisov',  label: 'Yura Borisov — Anora',            badges: ['INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'kieran-culkin', label: 'Kieran Culkin — A Real Pain',      badges: [] },
-      { id: 'edward-norton', label: 'Edward Norton — A Complete Unknown', badges: [] },
-      { id: 'guy-pearce',    label: 'Guy Pearce — The Brutalist',       badges: ['INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'jeremy-strong', label: 'Jeremy Strong — A Complete Unknown', badges: [] },
-    ],
-  },
-  {
-    id: 'directing', label: 'Directing',
-    nominees: [
-      { id: 'jacques-audiard',  label: 'Jacques Audiard — Emilia Pérez',  badges: ['INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'sean-baker',       label: 'Sean Baker — Anora',               badges: [] },
-      { id: 'brady-corbet',     label: 'Brady Corbet — The Brutalist',     badges: ['IMMIGRANT'] },
-      { id: 'james-mangold',    label: 'James Mangold — A Complete Unknown', badges: [] },
-      { id: 'coralie-fargeat',  label: 'Coralie Fargeat — The Substance',  badges: ['WOMEN', 'INTERNATIONAL', 'IMMIGRANT'] },
-    ],
-  },
-  {
-    id: 'actress', label: 'Actress in a Leading Role',
-    nominees: [
-      { id: 'cynthia-erivo',      label: 'Cynthia Erivo — Wicked',        badges: ['WOMEN', 'BLACK', 'INTERNATIONAL'] },
-      { id: 'karla-sofia-gascon', label: 'Karla Sofía Gascón — Emilia Pérez', badges: ['WOMEN', 'LGBTQ', 'LATINO', 'INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'mikey-madison',      label: 'Mikey Madison — Anora',          badges: ['WOMEN'] },
-      { id: 'demi-moore',         label: 'Demi Moore — The Substance',     badges: ['WOMEN'] },
-      { id: 'fernanda-torres',    label: 'Fernanda Torres — I\'m Still Here', badges: ['WOMEN', 'LATINO', 'INTERNATIONAL'] },
-    ],
-  },
-  {
-    id: 'actor', label: 'Actor in a Leading Role',
-    nominees: [
-      { id: 'adrien-brody',     label: 'Adrien Brody — The Brutalist',         badges: ['IMMIGRANT'] },
-      { id: 'timothee-chalamet',label: 'Timothée Chalamet — A Complete Unknown', badges: [] },
-      { id: 'colman-domingo',   label: 'Colman Domingo — Sing Sing',           badges: ['BLACK', 'LGBTQ'] },
-      { id: 'ralph-fiennes',    label: 'Ralph Fiennes — Conclave',             badges: ['FAITH', 'INTERNATIONAL'] },
-      { id: 'sebastian-stan',   label: 'Sebastian Stan — A Different Man',      badges: ['INTERNATIONAL', 'IMMIGRANT', 'NEURO'] },
-    ],
-  },
-  {
-    id: 'picture', label: 'Best Picture',
-    nominees: [
-      { id: 'anora',             label: 'Anora',             badges: ['WOMEN', 'IMMIGRANT'] },
-      { id: 'brutalist',         label: 'The Brutalist',     badges: ['IMMIGRANT', 'FAITH'] },
-      { id: 'complete-unknown',  label: 'A Complete Unknown', badges: [] },
-      { id: 'conclave',          label: 'Conclave',          badges: ['FAITH', 'WOMEN'] },
-      { id: 'emilia-perez',      label: 'Emilia Pérez',      badges: ['LGBTQ', 'LATINO', 'WOMEN', 'INTERNATIONAL'] },
-      { id: 'im-still-here',     label: "I'm Still Here",    badges: ['LATINO', 'INTERNATIONAL', 'IMMIGRANT', 'WOMEN'] },
-      { id: 'nickel-boys',       label: 'Nickel Boys',       badges: ['BLACK'] },
-      { id: 'the-substance',     label: 'The Substance',     badges: ['WOMEN', 'INTERNATIONAL'] },
-      { id: 'september-5',       label: 'September 5',       badges: ['INTERNATIONAL', 'IMMIGRANT'] },
-      { id: 'wicked',            label: 'Wicked',            badges: ['WOMEN', 'BLACK', 'LGBTQ'] },
-    ],
-  },
+// ── NOMINEE DATA (98th Academy Awards) ──
+const CATS = [
+  {id:"animated-short",title:"Animated Short Film",noms:[
+    {n:"Butterfly",rep:"Directed by a Black woman — reflecting the expanded Academy membership driven by #OscarsSoWhite.",badges:["black","women"]},
+    {n:"Forevergreen"},
+    {n:"The Girl Who Cried Pearls",rep:"Features a non-Western cultural narrative with a female lead.",badges:["asian","women"]},
+    {n:"Retirement Plan"},
+    {n:"The Three Sisters"}
+  ]},
+  {id:"live-action-short",title:"Live Action Short Film",noms:[
+    {n:"Butcher's Stain"},
+    {n:"A Friend of Dorothy",rep:"One of only a handful of explicitly LGBTQIA+ stories recognized in this year's nominations — told by a queer filmmaker.",badges:["lgbtq"]},
+    {n:"Jane Austen's Period Drama"},
+    {n:"The Singers",rep:"Directed by a woman of color with a non-Western cultural narrative.",badges:["women","intl"]},
+    {n:"Two People Exchanging Saliva",rep:"Explores identity and intimacy outside the heteronormative lens.",badges:["lgbtq"]}
+  ]},
+  {id:"documentary-short",title:"Documentary Short Film",noms:[
+    {n:"All the Empty Rooms",rep:"Examines the housing crisis and its disproportionate impact on communities of color.",badges:["black"]},
+    {n:"Armed Only with a Camera: The Life and Death of Brent Renaud",rep:"Documents conflict and displacement affecting marginalized communities globally.",badges:["intl","diaspora"]},
+    {n:'Children No More: "Were and Are Gone"',rep:"International film documenting atrocities affecting children — a story of marginalized communities.",badges:["intl","faith"]},
+    {n:"The Devil Is Busy"},
+    {n:"Perfectly a Strangeness"}
+  ]},
+  {id:"documentary-feature",title:"Documentary Feature Film",noms:[
+    {n:"The Alabama Solution",rep:"Explores racial justice and the criminal legal system's impact on Black communities in the American South.",badges:["black"]},
+    {n:"Come See Me in the Good Light",rep:"Documentary centered on a Black LGBTQ+ artist's story — one of the few LGBTQIA+ stories recognized this year.",badges:["black","women","lgbtq"]},
+    {n:"Cutting Through Rocks",rep:"International film examining race and gender in a non-Western context.",badges:["intl","women"]},
+    {n:"Mr. Nobody Against Putin",rep:"Documents political dissent and persecution — marginalized voices against authoritarianism.",badges:["intl"]},
+    {n:"The Perfect Neighbor",rep:"Explores race, immigration and belonging in America, directed by a Latina filmmaker.",badges:["latino","women"]}
+  ]},
+  {id:"original-score",title:"Music (Original Score)",noms:[
+    {n:"Jerskin Fendrix",f:"Bugonia"},
+    {n:"Alexandre Desplat",f:"Frankenstein"},
+    {n:"Max Richter",f:"Hamnet"},
+    {n:"Jonny Greenwood",f:"One Battle After Another"},
+    {n:"Ludwig Göransson",f:"Sinners",rep:"Score drew deeply on Black American musical traditions — blues, gospel and jazz — for a genre (horror) almost never honored by the Academy.",badges:["black"]}
+  ]},
+  {id:"original-song",title:"Music (Original Song)",noms:[
+    {n:'"Dear Me"',f:"Diane Warren: Relentless"},
+    {n:'"Golden"',f:"KPop Demon Hunters",rep:"Korean-language pop song performed by Asian artists Ejae, Audrey Nuna and Rei Ami.",badges:["asian"]},
+    {n:'"I Lied To You"',f:"Sinners",rep:"Written and performed by Black artists Miles Caton and Raphael Saadiq. Rooted in Black American blues tradition. Featured a tribute with Misty Copeland, Brittany Howard, Christone 'Kingfish' Ingram, Bobby Rush, Shaboozey and Alice Smith.",badges:["black"]},
+    {n:'"Sweet Dreams Of Joy"',f:"Viva Verdi!"},
+    {n:'"Train Dreams"',f:"Train Dreams"}
+  ]},
+  {id:"makeup",title:"Makeup and Hairstyling",noms:[
+    {n:"Frankenstein"},
+    {n:"Kokuho",rep:"Japanese film — team Kyoko Toyokawa, Naomi Hibino and Tadashi Nishimatsu recognized in a craft category that rarely acknowledges Asian productions.",badges:["asian"]},
+    {n:"Sinners",rep:"Team led by Shunika Terry (Black woman) — worked to authentically represent Black beauty, hair and culture in 1930s Mississippi Delta.",badges:["black","women"]},
+    {n:"The Smashing Machine"},
+    {n:"The Ugly Stepsister"}
+  ]},
+  {id:"costume-design",title:"Costume Design",noms:[
+    {n:"Avatar: Fire and Ash"},
+    {n:"Frankenstein",rep:"Costume designer Kate Hawley — international female-led design team.",badges:["women"]},
+    {n:"Hamnet",rep:"Costume designer Malgosia Turzanska — female-led international design team.",badges:["women","intl"]},
+    {n:"Marty Supreme"},
+    {n:"Sinners",rep:"Ruth E. Carter earned her 5th nomination — making her the most-nominated Black woman in Oscar history, surpassing Viola Davis. She was the first Black person to win Costume Design (Black Panther, 2018) and the first Black woman to win two competitive Oscars.",badges:["black","women"]}
+  ]},
+  {id:"production-design",title:"Production Design",noms:[
+    {n:"Frankenstein",rep:"Argentina's Florencia Martin nominated for production design — part of a record year for Latino nominees.",badges:["latino","women"]},
+    {n:"Hamnet"},
+    {n:"Marty Supreme"},
+    {n:"One Battle After Another"},
+    {n:"Sinners",rep:"Hannah Beachler earned her 2nd nomination — she remains the only Black woman ever nominated for Production Design. She won the Oscar for Black Panther (2018), becoming the first Black person to win in that category.",badges:["black","women"]}
+  ]},
+  {id:"cinematography",title:"Cinematography",noms:[
+    {n:"Frankenstein"},
+    {n:"Marty Supreme"},
+    {n:"One Battle After Another"},
+    {n:"Sinners",rep:"Autumn Durald Arkapaw is the first woman of color, first Filipino woman, and only the 4th woman ever nominated for Cinematography in 98 years. She is also the first woman to shoot on large-format IMAX film and a top contender to become the first female winner in the category's history.",badges:["black","women","asian"]},
+    {n:"Train Dreams"}
+  ]},
+  {id:"film-editing",title:"Film Editing",noms:[
+    {n:"F1"},
+    {n:"Marty Supreme"},
+    {n:"One Battle After Another"},
+    {n:"Sentimental Value"},
+    {n:"Sinners",rep:"Editor Michael Shawver worked with a predominantly Black creative team on the most-nominated film in Oscar history.",badges:["black"]}
+  ]},
+  {id:"sound",title:"Sound",noms:[
+    {n:"F1"},
+    {n:"Frankenstein"},
+    {n:"One Battle After Another"},
+    {n:"Sinners"},
+    {n:"Sirât",rep:"Sound team Amanda Villavieja, Laia Casanovas and Yasmina Praderas made history as the first all-female team EVER nominated for Best Sound in the Academy's 98-year history. Only 6 women have ever won in competitive sound categories.",badges:["women","intl"]}
+  ]},
+  {id:"visual-effects",title:"Visual Effects",noms:[
+    {n:"Avatar: Fire and Ash"},
+    {n:"F1"},
+    {n:"Jurassic World Rebirth"},
+    {n:"The Lost Bus"},
+    {n:"Sinners",rep:"VFX team realized a Black-led supernatural epic set in 1930s Mississippi — a genre and cultural setting the Academy has almost never recognized.",badges:["black"]}
+  ]},
+  {id:"animated-feature",title:"Animated Feature Film",noms:[
+    {n:"Arco"},
+    {n:"Elio",rep:"Originally featured a gay character, though the film was altered before release. Represents one of the few LGBTQIA+ adjacent stories in this year's nominations.",badges:["lgbtq"]},
+    {n:"KPop Demon Hunters",rep:"Korean-language animated film with an all-Asian creative team. Yvett Merino made history as the first Latina nominated in animation.",badges:["asian","latino"]},
+    {n:"Little Amélie or the Character of Rain",rep:"French-language film from an international female director.",badges:["women","intl"]},
+    {n:"Zootopia 2"}
+  ]},
+  {id:"international-feature",title:"International Feature Film",noms:[
+    {n:"The Secret Agent",rep:"Brazilian-Portuguese language film by director Kleber Mendonça Filho. Part of a record year for Brazilian nominees.",badges:["intl","latino","diaspora"]},
+    {n:"It Was Just an Accident",rep:"By Iranian director Jafar Panahi, who has been imprisoned and banned from filmmaking by his government. His nomination is an act of defiance against political oppression.",badges:["intl","faith"]},
+    {n:"Sentimental Value",rep:"Norwegian-language film with international female leads — part of a record year for non-English language cinema at the Oscars.",badges:["intl","women"]},
+    {n:"Sirât",rep:"Spanish film whose sound team became the first all-female team EVER nominated for Best Sound. Directed by Oliver Laxe.",badges:["intl","women"]},
+    {n:"The Voice of Hind Rajab",rep:"Director Kaouther Ben Hania is the first Arab woman to direct three Oscar-nominated films. Lead actor Motaz Malhees was barred from attending under the US travel ban. His statement: 'You can block a passport. You cannot block a voice.' If Ben Hania wins, she will be the first Arab woman to receive an Academy Award.",badges:["intl","faith","diaspora"]}
+  ]},
+  {id:"casting",title:"Casting (New Category)",noms:[
+    {n:"Hamnet",rep:"Diverse casting team reflecting Academy's new representation standards enacted after #OscarsSoWhite.",badges:["women"]},
+    {n:"Marty Supreme"},
+    {n:"One Battle After Another",rep:"Multiracial cast including Teyana Taylor (Black woman) and Benicio Del Toro (Puerto Rican).",badges:["black","latino"]},
+    {n:"The Secret Agent",rep:"Brazilian film with a diverse Latino and international cast.",badges:["intl","latino"]},
+    {n:"Sinners",rep:"Casting director Francine Maisler assembled a predominantly Black cast for the most-nominated film in Oscar history — including Michael B. Jordan, Delroy Lindo, Wunmi Mosaku, Miles Caton and more.",badges:["black"]}
+  ]},
+  {id:"actor-supporting",title:"Actor in a Supporting Role",noms:[
+    {n:"Benicio Del Toro",f:"One Battle After Another",rep:"Puerto Rican actor earning his third Oscar nomination. One of only five actors of Puerto Rican descent to win an Oscar, having done so in 2001 for Traffic.",badges:["latino"]},
+    {n:"Jacob Elordi",f:"Frankenstein"},
+    {n:"Delroy Lindo",f:"Sinners",rep:"Black British-American actor earning his first Oscar nomination at age 72 — part of Sinners' 10 nominations for Black artists, tying the all-time record.",badges:["black"]},
+    {n:"Sean Penn",f:"One Battle After Another"},
+    {n:"Stellan Skarsgård",f:"Sentimental Value"}
+  ]},
+  {id:"actress-supporting",title:"Actress in a Supporting Role",noms:[
+    {n:"Elle Fanning",f:"Sentimental Value"},
+    {n:"Inga Ibsdotter Lilleaas",f:"Sentimental Value",rep:"Norwegian actress — part of the historic first: 4 non-English language films represented across all four acting categories in the same year.",badges:["intl"]},
+    {n:"Amy Madigan",f:"Weapons"},
+    {n:"Wunmi Mosaku",f:"Sinners",rep:"Black British-Nigerian actress — part of Sinners' record 10 nominations for Black artists, tying the all-time record.",badges:["black","diaspora"]},
+    {n:"Teyana Taylor",f:"One Battle After Another",rep:"Black woman nominated for Supporting Actress in a major studio film — breaking into one of Hollywood's most prestigious categories.",badges:["black","women"]}
+  ]},
+  {id:"adapted-screenplay",title:"Writing (Adapted Screenplay)",noms:[
+    {n:"Bugonia"},
+    {n:"Frankenstein",rep:"Guillermo del Toro (Mexican) — the most-nominated Latino producer in Oscar history with 3 Oscar wins.",badges:["latino"]},
+    {n:"Hamnet",rep:"Screenplay by a female writer adapting Maggie O'Farrell's novel — centers a mother's grief and interiority, a perspective rarely honored at this level.",badges:["women"]},
+    {n:"One Battle After Another"},
+    {n:"Train Dreams"}
+  ]},
+  {id:"original-screenplay",title:"Writing (Original Screenplay)",noms:[
+    {n:"Blue Moon"},
+    {n:"It Was Just an Accident",rep:"By Jafar Panahi, an Iranian filmmaker who has been imprisoned and banned from filmmaking by his government. His nomination represents storytelling in defiance of political oppression.",badges:["intl","faith"]},
+    {n:"Marty Supreme"},
+    {n:"Sentimental Value",rep:"Norwegian-language original screenplay by Joachim Trier — non-English original screenplays almost never reach this category.",badges:["intl"]},
+    {n:"Sinners",rep:"Ryan Coogler's original screenplay for a Black-led genre film set in 1930s Mississippi. No Black screenwriter has ever won Best Original Screenplay.",badges:["black"]}
+  ]},
+  {id:"directing",title:"Directing",noms:[
+    {n:"Chloé Zhao",f:"Hamnet",rep:"Chinese-born director — only the second woman nominated for Best Director in recent years. No woman has won Best Director since Kathryn Bigelow in 2010.",badges:["women","asian","diaspora"]},
+    {n:"Josh Safdie",f:"Marty Supreme"},
+    {n:"Paul Thomas Anderson",f:"One Battle After Another"},
+    {n:"Joachim Trier",f:"Sentimental Value",rep:"Norwegian director — non-English language films in Best Director are exceptionally rare.",badges:["intl"]},
+    {n:"Ryan Coogler",f:"Sinners",rep:"Only the 7th Black filmmaker ever nominated for Best Director in 98 years, joining John Singleton, Lee Daniels, Steve McQueen, Barry Jenkins, Jordan Peele and Spike Lee. No Black filmmaker has ever won Best Director.",badges:["black"]}
+  ]},
+  {id:"actor-leading",title:"Actor in a Leading Role",noms:[
+    {n:"Timothée Chalamet",f:"Marty Supreme"},
+    {n:"Leonardo DiCaprio",f:"One Battle After Another"},
+    {n:"Ethan Hawke",f:"Blue Moon"},
+    {n:"Michael B. Jordan",f:"Sinners",rep:"First Oscar nomination for Jordan — part of Sinners' 10 nominations for Black artists, tying the all-time record for most Black nominees from a single film.",badges:["black"]},
+    {n:"Wagner Moura",f:"The Secret Agent",rep:"First Brazilian-born actor EVER nominated for Best Actor in the Oscar's 98-year history. Only the third Brazilian ever nominated in any acting category.",badges:["intl","latino","diaspora"]}
+  ]},
+  {id:"actress-leading",title:"Actress in a Leading Role",noms:[
+    {n:"Jessie Buckley",f:"Hamnet"},
+    {n:"Rose Byrne",f:"If I Had Legs I'd Kick You"},
+    {n:"Kate Hudson",f:"Song Sung Blue"},
+    {n:"Renate Reinsve",f:"Sentimental Value",rep:"Norwegian actress in a Norwegian-language film — part of a historic first: 4 non-English language films nominating actors across all four acting categories in the same year.",badges:["intl"]},
+    {n:"Emma Stone",f:"Bugonia"}
+  ]},
+  {id:"best-picture",title:"Best Picture",type:"picture",noms:[
+    {n:"Bugonia"},
+    {n:"F1"},
+    {n:"Frankenstein",rep:"Directed by Guillermo del Toro (Mexican) — the most-nominated Latino producer in Oscar history.",badges:["latino"]},
+    {n:"Hamnet",rep:"Directed by Chloé Zhao — one of only a handful of women ever nominated for Best Director.",badges:["women","asian"]},
+    {n:"Marty Supreme"},
+    {n:"One Battle After Another",rep:"Teyana Taylor (Black woman) nominated for Supporting Actress. Multiracial ensemble cast.",badges:["black","women"]},
+    {n:"The Secret Agent",rep:"Brazilian-Portuguese language film. Wagner Moura is the first Brazilian-born actor ever nominated for Best Actor.",badges:["intl","latino","diaspora"]},
+    {n:"Sentimental Value",rep:"Norwegian-language film with international female leads — part of a record year for non-English language cinema.",badges:["intl","women"]},
+    {n:"Sinners",rep:"Record 16 nominations — most in Oscar history. 10 for Black artists, tying all-time record. Zinzi Coogler: first Filipina producer and 3rd Black woman nominated for Best Picture, first Black married couple nominated together. Sev Ohanian: first Armenian American nominated for Best Picture.",badges:["black","women","asian","diaspora"]},
+    {n:"Train Dreams"}
+  ]}
 ];
 
-// ── STATE ──────────────────────────────────────────────────────
-const state = {
-  name: localStorage.getItem('osw_name') || '',
-  handle: localStorage.getItem('osw_handle') || '',
-  platform: localStorage.getItem('osw_platform') || 'twitter',
-  picks: JSON.parse(localStorage.getItem('osw_picks') || '{}'),
-  submitted: !!localStorage.getItem('osw_ballot_id'),
-  ballotId: localStorage.getItem('osw_ballot_id') || null,
+// ── STATE ──
+let S = {
+  page:"entry",
+  name:"",handle:"",platform:"Twitter/X",
+  myName:"",myHandle:"",myPlatform:"",
+  myBallotId:null,
+  picks:{},submitted:false,
+  winners:{},ballots:[],
+  fetching:false,fetchMsg:"",
+  saving:false,err:"",
+  activeTip:null,
+  adminAuth:false,adminPw:"",adminTabVisible:false,
+  lbLoading:false,
 };
 
-const LOCK_TIME = new Date('2026-03-15T23:00:00Z'); // 4PM PDT / 7PM EDT
-let winners = []; // populated from leaderboard
-let nextBtnTimer = null;
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]/g,"_");
+const esc = s => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 
-// ── INIT ───────────────────────────────────────────────────────
-function init() {
-  renderLegend();
-  renderCategories();
-  renderSubmitArea();
-  updateProgress();
-  populateForm();
-  checkLock();
-  handleHash();
-  window.addEventListener('hashchange', handleHash);
-  // auto-show progress bar if picks exist
-  if (Object.keys(state.picks).length > 0) {
-    document.getElementById('progress-wrap').style.display = 'flex';
-  }
-}
+// ── CLOCK ──
+setInterval(()=>render(),1000);
 
-function handleHash() {
-  const h = location.hash;
-  if (h === '#admin') showSection('admin');
-  else if (h === '#leaderboard' || h === '#results') showSection('leaderboard');
-}
-
-// ── SECTION NAVIGATION ─────────────────────────────────────────
-function showSection(name) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(name + '-section').classList.add('active');
-  const tabs = document.querySelectorAll('.nav-tab');
-  if (name === 'ballot') tabs[0].classList.add('active');
-  else if (name === 'leaderboard') { tabs[1].classList.add('active'); loadLeaderboard(); }
-  window.scrollTo(0, 0);
-}
-
-// ── LEGEND ─────────────────────────────────────────────────────
-function renderLegend() {
-  const el = document.getElementById('badge-legend');
-  el.innerHTML = Object.entries(BADGES).map(([k, b]) =>
-    `<div class="legend-item">
-      <div class="legend-dot" style="background:${b.color}"></div>
-      ${b.label}
-    </div>`
-  ).join('');
-}
-
-// ── CATEGORIES ─────────────────────────────────────────────────
-function renderCategories() {
-  const container = document.getElementById('categories-list');
-  container.innerHTML = CATEGORIES.map((cat, idx) => {
-    const picked = state.picks[cat.id];
-    return `
-    <div class="category-block${picked ? ' picked' : ''}" id="cat-${cat.id}">
-      <div class="category-header">
-        <span class="category-number">${String(idx + 1).padStart(2, '0')}</span>
-        <span class="category-name">${cat.label}</span>
-        <div class="category-check">✓</div>
-      </div>
-      <div class="nominees-list">
-        ${cat.nominees.map(n => renderNominee(cat.id, n, picked)).join('')}
-      </div>
-      ${idx < CATEGORIES.length - 1 ? '<div class="gold-rule"></div>' : ''}
-    </div>`;
-  }).join('');
-}
-
-function renderNominee(catId, nominee, pickedId) {
-  const isSelected = pickedId === nominee.id;
-  const winner = winners.find(w => w.categoryId === catId && w.nomineeId === nominee.id);
-  const isWinner = !!winner;
-  const isCorrect = isSelected && isWinner;
-  const isIncorrect = isSelected && winners.find(w => w.categoryId === catId) && !isWinner;
-  const classes = ['nominee-row',
-    isSelected ? 'selected' : '',
-    isWinner ? 'winner' : '',
-    isCorrect ? 'correct' : '',
-    isIncorrect ? 'incorrect' : '',
-  ].filter(Boolean).join(' ');
-
-  const badgeHtml = nominee.badges.length
-    ? `<div class="badges">${nominee.badges.map(b => {
-        const def = BADGES[b];
-        if (!def) return '';
-        return `<span class="badge" style="background:${def.bg};border-color:${def.color};color:${def.color}" title="${def.label}">
-          <span class="badge-letter">${def.letter}</span>
-        </span>`;
-      }).join('')}</div>`
-    : '';
-
-  return `<div class="${classes}" onclick="pickNominee('${catId}','${nominee.id}',this)">
-    <div class="nominee-radio"></div>
-    <div class="nominee-label">${nominee.label}</div>
-    ${badgeHtml}
-    <div class="winner-star">★ WINNER</div>
-  </div>`;
-}
-
-// ── PICKING ────────────────────────────────────────────────────
-function pickNominee(catId, nomineeId, el) {
-  if (document.body.classList.contains('locked')) return;
-
-  state.picks[catId] = nomineeId;
-  localStorage.setItem('osw_picks', JSON.stringify(state.picks));
-
-  // Re-render this category block
-  const catIdx = CATEGORIES.findIndex(c => c.id === catId);
-  const cat = CATEGORIES[catIdx];
-  const block = document.getElementById('cat-' + catId);
-  block.classList.add('picked');
-  const picked = nomineeId;
-  block.querySelector('.nominees-list').innerHTML =
-    cat.nominees.map(n => renderNominee(catId, n, picked)).join('');
-
-  updateProgress();
-  showNextBtn();
-  renderSubmitArea();
-
-  // Show progress bar on first pick
-  document.getElementById('progress-wrap').style.display = 'flex';
-}
-
-// ── PROGRESS ───────────────────────────────────────────────────
-function updateProgress() {
-  const total = CATEGORIES.length;
-  const picked = Object.keys(state.picks).length;
-  const pct = total > 0 ? (picked / total) * 100 : 0;
-  document.getElementById('progress-bar-fill').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = `${picked} / ${total}`;
-
-  // Score (if winners exist)
-  if (winners.length > 0) {
-    const score = calcScore(state.picks);
-    const scoreEl = document.getElementById('progress-score');
-    scoreEl.textContent = `${score} pts`;
-    scoreEl.style.display = 'block';
-  }
-}
-
-function calcScore(picks) {
-  let score = 0;
-  for (const w of winners) {
-    if (picks[w.categoryId] === w.nomineeId) score++;
-  }
-  return score;
-}
-
-// ── NEXT BUTTON ────────────────────────────────────────────────
-function showNextBtn() {
-  const btn = document.getElementById('next-btn');
-  btn.classList.add('visible');
-  clearTimeout(nextBtnTimer);
-  nextBtnTimer = setTimeout(() => btn.classList.remove('visible'), 3000);
-}
-
-function goToNextCategory() {
-  document.getElementById('next-btn').classList.remove('visible');
-  for (const cat of CATEGORIES) {
-    if (!state.picks[cat.id]) {
-      const el = document.getElementById('cat-' + cat.id);
-      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+// ── LOCALSTORAGE ──
+function restoreLocal(){
+  S.name = localStorage.getItem("osw26_name")||"";
+  S.handle = localStorage.getItem("osw26_handle")||"";
+  S.platform = localStorage.getItem("osw26_platform")||"Twitter/X";
+  S.myBallotId = localStorage.getItem("osw26_bid")||null;
+  try{const p=localStorage.getItem("osw26_picks");if(p)S.picks=JSON.parse(p);}catch(e){}
+  if(S.name&&S.handle){
+    S.myName=S.name;S.myHandle=S.handle;S.myPlatform=S.platform;
+    S.submitted=!!S.myBallotId;
+    if(S.submitted||Object.keys(S.picks).length>0){
+      S.page=isLocked()?"leaderboard":"ballot";
     }
   }
-  // All picked — scroll to submit
-  document.getElementById('submit-area').scrollIntoView({ behavior: 'smooth' });
+  if(location.hash==="#admin")S.adminTabVisible=true;
+}
+function saveLocal(){
+  if(S.myName)localStorage.setItem("osw26_name",S.myName);
+  if(S.myHandle)localStorage.setItem("osw26_handle",S.myHandle);
+  if(S.myPlatform)localStorage.setItem("osw26_platform",S.myPlatform);
+  localStorage.setItem("osw26_picks",JSON.stringify(S.picks));
 }
 
-// ── FORM ───────────────────────────────────────────────────────
-function populateForm() {
-  if (state.name) document.getElementById('input-name').value = state.name;
-  if (state.handle) document.getElementById('input-handle').value = state.handle;
-  if (state.platform) document.getElementById('input-platform').value = state.platform;
-  if (state.submitted) {
-    showSubmittedBanner();
-  }
-}
-
-function showSubmittedBanner() {
-  const banner = document.getElementById('submitted-banner');
-  banner.classList.add('visible');
-  if (state.ballotId) {
-    document.getElementById('ballot-id-note').textContent = `Ballot ID: ${state.ballotId}`;
-  }
-}
-
-// ── SUBMIT AREA ────────────────────────────────────────────────
-function renderSubmitArea() {
-  const total = CATEGORIES.length;
-  const picked = Object.keys(state.picks).length;
-  const btn = document.getElementById('submit-btn');
-  const hint = document.getElementById('submit-hint');
-
-  if (state.submitted) {
-    btn.textContent = 'Resubmit Ballot';
-    hint.textContent = 'You can resubmit to update your picks until the ballot locks.';
-  } else {
-    btn.textContent = 'Submit My Ballot';
-    if (picked < total) {
-      hint.textContent = `${total - picked} categor${total - picked === 1 ? 'y' : 'ies'} remaining.`;
-    } else {
-      hint.textContent = 'All categories picked — ready to submit!';
-    }
-  }
-}
-
-// ── CHECK LOCK ─────────────────────────────────────────────────
-function checkLock() {
-  const now = new Date();
-  const lockNotice = document.getElementById('lock-notice');
-  if (now >= LOCK_TIME) {
-    document.body.classList.add('locked');
-    lockNotice.textContent = 'Ballot locked · March 15, 2026 at 4:00 PM PDT';
-  } else {
-    const diff = LOCK_TIME - now;
-    const h = Math.floor(diff / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    if (h < 24) {
-      lockNotice.textContent = `Ballot locks in ${h}h ${m}m · March 15, 2026 at 4:00 PM PDT`;
-    } else {
-      lockNotice.textContent = 'Ballot locks March 15, 2026 at 4:00 PM PDT';
-    }
-  }
-}
-
-// ── SUBMIT BALLOT ──────────────────────────────────────────────
-async function submitBallot() {
-  const name = document.getElementById('input-name').value.trim();
-  const handle = document.getElementById('input-handle').value.trim();
-  const platform = document.getElementById('input-platform').value;
-
-  if (!name) { alert('Please enter your name.'); return; }
-  if (!handle) { alert('Please enter your handle.'); return; }
-
-  state.name = name;
-  state.handle = handle;
-  state.platform = platform;
-  localStorage.setItem('osw_name', name);
-  localStorage.setItem('osw_handle', handle);
-  localStorage.setItem('osw_platform', platform);
-
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = true;
-  btn.textContent = 'Submitting…';
-
-  try {
-    const res = await apiFetch('/api/ballot', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, handle, platform, picks: state.picks }),
-    });
-    state.ballotId = res.id;
-    state.submitted = true;
-    localStorage.setItem('osw_ballot_id', res.id);
-    showSubmittedBanner();
-    renderSubmitArea();
-  } catch (e) {
-    alert('Could not submit: ' + e.message);
-  } finally {
-    btn.disabled = false;
-    renderSubmitArea();
-  }
-}
-
-// ── API ────────────────────────────────────────────────────────
-async function apiFetch(path, opts = {}) {
-  const r = await fetch(path, opts);
-  if (!r.ok) {
-    const body = await r.json().catch(() => ({}));
-    throw new Error(body.error || r.statusText);
-  }
+// ── API ──
+async function apiFetch(path,opts={}){
+  const r=await fetch(path,opts);
+  if(!r.ok){const b=await r.json().catch(()=>({}));throw new Error(b.error||r.statusText);}
   return r.json();
 }
 
-// ── LEADERBOARD ────────────────────────────────────────────────
-let lbLoading = false;
+async function loadShared(){
+  try{
+    const data=await apiFetch("/api/leaderboard");
+    // Deduplicate ballots by name+handle — keep latest submission
+    const dedupMap={};
+    (data.ballots||[]).forEach(b=>{
+      const key=(b.name+"|"+b.handle).toLowerCase();
+      if(!dedupMap[key]||b.submittedAt>dedupMap[key].submittedAt)dedupMap[key]=b;
+    });
+    S.ballots=Object.values(dedupMap);
+    // Build winners map: categoryId -> winner display name
+    S.winners={};
+    (data.winners||[]).forEach(w=>{S.winners[w.categoryId]=w.winnerName||w.nomineeId;});
+  }catch(e){console.error("loadShared:",e);}
+}
 
-async function loadLeaderboard() {
-  if (lbLoading) return;
-  lbLoading = true;
-  const content = document.getElementById('lb-content');
-  const errEl = document.getElementById('lb-error');
-  errEl.classList.remove('visible');
+async function saveBallot(){
+  S.saving=true;render();
+  try{
+    const res=await apiFetch("/api/ballot",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({name:S.myName,handle:S.myHandle,platform:S.myPlatform,picks:S.picks})
+    });
+    S.myBallotId=res.id;
+    localStorage.setItem("osw26_bid",res.id);
+    await loadShared();
+    S.submitted=true;S.page="leaderboard";
+  }catch(e){alert("Save failed — "+e.message);}
+  S.saving=false;render();
+}
 
-  // Skeleton
-  content.innerHTML = [1,2,3,4,5].map(() =>
-    `<div class="skel-row"></div>`
-  ).join('');
+async function refreshResults(){
+  S.fetching=true;S.fetchMsg="Refreshing live results…";render();
+  try{
+    await loadShared();
+    const count=Object.keys(S.winners).length;
+    S.fetchMsg=count>0?`${count} winner${count!==1?"s":""} loaded ✓`:"No winners yet — try again soon.";
+  }catch(e){S.fetchMsg="Error — try again.";}
+  S.fetching=false;render();
+  setTimeout(()=>{S.fetchMsg="";render();},5000);
+}
 
-  try {
-    const data = await apiFetch('/api/leaderboard');
-    winners = data.winners || [];
-    renderLeaderboard(data.ballots || [], data.winners || []);
-    // Update scores on ballot
-    updateProgress();
-    rerenderWinners();
-  } catch (e) {
-    content.innerHTML = '';
-    errEl.classList.add('visible');
-  } finally {
-    lbLoading = false;
+// Admin
+async function adminLogin(){
+  const pw=(document.getElementById("admin-pw")||{}).value||"";
+  if(!pw)return;
+  S.adminPw=pw;S.adminAuth=true;render();
+}
+async function saveWinner(catId){
+  const sel=document.getElementById("adm-"+catId);
+  if(!sel||!sel.value)return;
+  const winnerName=sel.value;
+  const btn=document.getElementById("adm-btn-"+catId);
+  if(btn){btn.textContent="…";btn.disabled=true;}
+  try{
+    await apiFetch("/api/winner",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({categoryId:catId,nomineeId:slug(winnerName),winnerName,password:S.adminPw})
+    });
+    S.winners[catId]=winnerName;
+    if(btn){btn.textContent="Saved";btn.classList.add("saved");setTimeout(()=>{btn.textContent="Save";btn.classList.remove("saved");btn.disabled=false;},2000);}
+  }catch(e){
+    if(e.message==="Incorrect password"){S.adminAuth=false;render();}
+    else{alert("Error: "+e.message);if(btn){btn.textContent="Save";btn.disabled=false;}}
   }
 }
 
-function rerenderWinners() {
-  CATEGORIES.forEach(cat => {
-    const block = document.getElementById('cat-' + cat.id);
-    if (!block) return;
-    const picked = state.picks[cat.id];
-    block.querySelector('.nominees-list').innerHTML =
-      cat.nominees.map(n => renderNominee(cat.id, n, picked)).join('');
-  });
+// ── POLL (every 30s after lock) ──
+setInterval(async()=>{
+  if(new Date()<LOCK_TIME)return;
+  await loadShared();render();
+},30000);
+
+// ── HELPERS ──
+function isLocked(){return new Date()>=LOCK_TIME;}
+function cd(){
+  const ms=LOCK_TIME-new Date();if(ms<=0)return null;
+  const h=Math.floor(ms/3600000),m=Math.floor((ms%3600000)/60000),s=Math.floor((ms%60000)/1000);
+  return h>0?`${h}h ${m}m ${s}s`:m>0?`${m}m ${s}s`:`${s}s`;
+}
+function nomState(catId,nomName){
+  const w=S.winners[catId],sel=S.picks[catId]===nomName,isWin=w===nomName;
+  if(!w)return sel?"selected":"none";
+  if(sel&&isWin)return"correct";if(sel)return"wrong";if(isWin)return"winner";return"none";
+}
+function scoreFor(picks){
+  let pts=0,correct=0;
+  CATS.forEach(c=>{if(S.winners[c.id]&&picks[c.id]===S.winners[c.id]){pts++;correct++;}});
+  return{pts,correct};
+}
+function ranked(){return[...S.ballots].map(b=>({...b,...scoreFor(b.picks||{})})).sort((a,b)=>b.pts-a.pts||a.submittedAt.localeCompare(b.submittedAt));}
+
+// ── SHARED HEADER ──
+function renderHeader(showPlaying){
+  return`<div class="hdr">
+    <div class="rule"></div>
+    <div class="yr">98th Academy Awards &nbsp;·&nbsp; March 15, 2026</div>
+    <div class="ttl">🏆 &nbsp;OSCARS® BALLOT&nbsp; 🏆</div>
+    ${showPlaying?`<div class="playing-as">Playing as: <b>${esc(S.myName)}</b> &nbsp;·&nbsp; <b>${esc(S.myPlatform)}: ${esc(S.myHandle)}</b></div>`:`<div class="sub">Cast your ballot. Learn the history. Celebrate the firsts.</div>`}
+    <div class="rule"></div>
+  </div>
+  <div class="osw-strip">
+    <span class="osw-lbl">◈ #OscarsSoWhite</span>
+    <span class="osw-div"></span>
+    <span class="osw-desc">Highlighted nominees represent firsts, records and breakthroughs — tap ◈ to learn the story</span>
+    <span class="osw-cr">April Reign, 2015</span>
+  </div>`;
 }
 
-function renderLeaderboard(ballots, winnersArr) {
-  const content = document.getElementById('lb-content');
-
-  if (ballots.length === 0 && winnersArr.length === 0) {
-    content.innerHTML = `<p class="winners-none">No ballots yet — be the first to submit!</p>`;
-    return;
-  }
-
-  // Score each ballot
-  const scored = ballots.map(b => ({
-    ...b,
-    score: calcScore(b.picks || {}),
-    possible: winnersArr.length,
-  }));
-  scored.sort((a, b) => b.score - a.score || a.submittedAt.localeCompare(b.submittedAt));
-
-  const winnersSummary = winnersArr.length > 0
-    ? `<div style="margin-bottom:20px;padding:14px 16px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);border-radius:2px">
-        <span style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.1em;color:var(--gold)">${winnersArr.length} of ${CATEGORIES.length} winners announced</span>
-       </div>`
-    : `<div style="margin-bottom:20px;padding:14px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:2px">
-        <span style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.3)">Scoring begins when winners are announced</span>
-       </div>`;
-
-  const rows = scored.map((b, i) => {
-    const isYours = b.id === state.ballotId;
-    const icon = PLATFORM_ICONS[b.platform] || PLATFORM_ICONS.other;
-    return `<tr class="${isYours ? 'yours-row' : ''}">
-      <td class="lb-rank">${i + 1}</td>
-      <td class="lb-name">${esc(b.name)}</td>
-      <td class="lb-handle">${icon} ${esc(b.handle)}</td>
-      <td class="lb-score">
-        ${b.score}<span style="font-size:11px;color:rgba(255,255,255,0.3)"> / ${b.possible}</span>
-        <small>${new Date(b.submittedAt).toLocaleDateString()}</small>
-      </td>
-    </tr>`;
-  }).join('');
-
-  content.innerHTML = winnersSummary + `
-    <table class="lb-table">
-      <thead><tr>
-        <th>#</th><th>Name</th><th>Handle</th><th style="text-align:right">Score</th>
-      </tr></thead>
-      <tbody>${rows}</tbody>
-    </table>`;
-}
-
-function esc(s) {
-  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-// ── ADMIN ──────────────────────────────────────────────────────
-let adminPassword = '';
-
-function adminLogin() {
-  const pw = document.getElementById('admin-pw-input').value;
-  if (!pw) return;
-  adminPassword = pw;
-  document.getElementById('admin-login-box').style.display = 'none';
-  document.getElementById('admin-panel').classList.add('visible');
-  renderAdminCategories();
-  loadAdminWinners();
-}
-
-function renderAdminCategories() {
-  const container = document.getElementById('admin-categories');
-  container.innerHTML = CATEGORIES.map(cat => `
-    <div class="admin-category" id="admin-cat-${cat.id}">
-      <label>${cat.label}</label>
-      <div class="admin-row">
-        <select id="admin-sel-${cat.id}">
-          <option value="">— Not yet announced —</option>
-          ${cat.nominees.map(n => `<option value="${n.id}">${n.label}</option>`).join('')}
-        </select>
-        <button class="admin-save-btn" onclick="saveWinner('${cat.id}')">Save</button>
-        <span class="admin-winner-badge" id="admin-badge-${cat.id}"></span>
+// ── ENTRY PAGE ──
+function renderEntry(){
+  const locked=isLocked(),countdown=cd();
+  return`<div class="entry-page">
+    <div class="entry-card">
+      ${renderHeader(false)}
+      ${locked?`<div class="locked-bar"><span class="locked-lbl">🔒 PICKS LOCKED — CEREMONY IS LIVE</span></div>`:countdown?`<div class="cd-bar"><span class="cd-lbl">PICKS LOCK IN &nbsp;</span><span class="cd-num">${countdown}</span></div>`:""}
+      <div class="landing" style="background:#0f0c18;border-top:none;">
+        <div class="landing-tag">TEN YEARS OF #OSCARSSSOWHITE</div>
+        <div class="landing-h">One Tweet. A Decade of Change.</div>
+        <div class="landing-p">In 2015, <b>April Reign</b> sent a tweet that changed Hollywood forever. <b>#OscarsSoWhite</b> sparked a global reckoning on representation — leading the Academy to overhaul its membership, diversify its voter base, and confront who gets to tell stories on the world's biggest stage. The diversity rules enacted in response are now producing results. But the work is not finished.</div>
+        <div class="landing-h" style="margin-top:16px;">Why 2026 Is Historic</div>
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-num">16</div><div class="stat-lbl">Nominations for <i>Sinners</i> — most in Oscar history, breaking records held by <i>Titanic</i> and <i>La La Land</i></div></div>
+          <div class="stat-card"><div class="stat-num">10</div><div class="stat-lbl">Of those nominations went to Black artists — tying the all-time record set by <i>Judas and the Black Messiah</i></div></div>
+          <div class="stat-card"><div class="stat-num">74</div><div class="stat-lbl">Women nominated total — an all-time record, up from 73 in 2023</div></div>
+          <div class="stat-card"><div class="stat-num">4</div><div class="stat-lbl">Non-English language films with acting nominees across all four acting categories — a historic first</div></div>
+        </div>
+        <div class="landing-p" style="margin-top:8px;font-size:13px;">Ruth E. Carter (Costume Design) is the most-nominated Black woman in Oscar history. Autumn Durald Arkapaw (Cinematography) is the first woman of color nominated in that category in 98 years. Zinzi Coogler is the first Filipina producer and third Black woman nominated for Best Picture. Wagner Moura is the first Brazilian-born actor ever nominated for Best Actor. Kaouther Ben Hania (<i>The Voice of Hind Rajab</i>) is the first Arab woman to direct three Oscar-nominated films. The Palestinian lead actor was barred from attending by the US travel ban. His statement: <b>"You can block a passport. You cannot block a voice."</b></div>
+        <div class="landing-p" style="color:rgba(255,100,100,.6);font-size:13px;">⚠ LGBTQIA+ representation remains a gap this year — a handful of exceptions include <i>A Friend of Dorothy</i>, <i>Come See Me in the Good Light</i>, and <i>Elio</i>. The conversation #OscarsSoWhite started must extend to all marginalized communities.</div>
+        <div class="landing-cta">Cast your ballot. Learn the nominations. Celebrate the history being made.</div>
+      </div>
+      <div class="entry-body">
+        <div class="f-lbl">Your Name</div>
+        <input class="f-inp" id="inp-name" type="text" value="${esc(S.name)}" placeholder="First and last name" autocomplete="name">
+        <div class="f-lbl">Social Media Handle</div>
+        <div class="platform-row">
+          <select class="f-sel" id="inp-platform">
+            ${["Twitter/X","Instagram","Threads","TikTok","Bluesky","Other"].map(p=>`<option value="${p}"${S.platform===p?" selected":""}>${p}</option>`).join("")}
+          </select>
+          <input class="f-inp-handle" id="inp-handle" type="text" value="${esc(S.handle)}" placeholder="@yourhandle">
+        </div>
+        ${S.err?`<div class="err">${esc(S.err)}</div>`:""}
+        <button class="btn-gold" id="btn-enter">${locked?"VIEW LEADERBOARD →":"ENTER & CAST MY BALLOT →"}</button>
+        ${S.ballots.length>0?`<div class="ballot-ct">${S.ballots.length} ballot${S.ballots.length!==1?"s":""} submitted so far</div>`:""}
       </div>
     </div>
-  `).join('');
+  </div>`;
 }
 
-async function loadAdminWinners() {
-  try {
-    const data = await apiFetch('/api/leaderboard');
-    (data.winners || []).forEach(w => {
-      const sel = document.getElementById('admin-sel-' + w.categoryId);
-      if (sel) sel.value = w.nomineeId;
-      const badge = document.getElementById('admin-badge-' + w.categoryId);
-      if (badge) badge.textContent = '★ Saved';
-    });
-  } catch (e) { /* silent */ }
+// ── MAIN APP ──
+function renderMain(){
+  const locked=isLocked(),countdown=cd();
+  const pickCount=Object.keys(S.picks).length;
+  const ann=Object.keys(S.winners).length;
+  const rnk=ranked();
+  const tabs=["ballot","leaderboard",...(S.adminTabVisible?["admin"]:[])];
+  return`<div class="page">
+    ${renderHeader(true)}
+    <div class="tabs">
+      <button class="tab${S.page==="ballot"?" active":""}" data-tab="ballot">My Ballot</button>
+      <button class="tab${S.page==="leaderboard"?" active":""}" data-tab="leaderboard">Leaderboard${S.ballots.length>0?` (${S.ballots.length})`:""}</button>
+      ${S.adminTabVisible?`<button class="tab${S.page==="admin"?" active":""}" data-tab="admin">Admin</button>`:""}
+    </div>
+    ${locked?`<div class="fetch-bar">
+      <span class="locked-lbl" style="font-family:'Cinzel',serif;color:#ff7070;font-size:9px;letter-spacing:2px;">🔒 PICKS LOCKED · CEREMONY LIVE</span>
+      <div style="display:flex;align-items:center;gap:10px;">
+        ${S.fetchMsg?`<span class="fetch-msg">${esc(S.fetchMsg)}</span>`:""}
+        <button class="btn-fetch" id="btn-fetch"${S.fetching?" disabled":""}>${S.fetching?"⟳ Refreshing…":"✦ Refresh Results"}</button>
+      </div>
+    </div>`:`<div class="prog-bar">
+      <span class="prog-lbl">PICKS MADE</span>
+      <div class="prog-track"><div class="prog-fill" style="width:${pickCount/TOTAL_CATS*100}%"></div></div>
+      <span class="prog-num"><b>${pickCount}</b>/${TOTAL_CATS}</span>
+      ${countdown?`<span class="prog-cd">LOCKS IN ${countdown}</span>`:""}
+    </div>`}
+    ${S.page==="ballot"?renderBallot(locked,pickCount):S.page==="admin"?renderAdmin():renderLeaderboard(rnk,ann)}
+    <div class="footer">
+      <span class="foot-logo" id="foot-logo">OSCARS®</span>
+      <span class="foot-osw">In honor of <b>April Reign</b> &amp; <b>#OscarsSoWhite</b> · 2015–2026</span>
+      <span class="foot-date">Live March 15 · 7e | 4p · ABC &amp; Hulu</span>
+    </div>
+  </div>`;
 }
 
-async function saveWinner(catId) {
-  const sel = document.getElementById('admin-sel-' + catId);
-  const btn = sel.parentElement.querySelector('.admin-save-btn');
-  const nomineeId = sel.value;
-  if (!nomineeId) return;
+// ── BALLOT ──
+function renderBallot(locked,pickCount){
+  const bpCat=CATS.find(c=>c.id==="best-picture");
+  const otherCats=CATS.filter(c=>c.id!=="best-picture");
+  const bpCards=bpCat.noms.map(n=>{
+    const st=nomState("best-picture",n.n);
+    const bc=st==="correct"?"var(--correct)":st==="wrong"?"var(--wrong)":n.rep?"var(--oswl)":"rgba(201,168,76,.3)";
+    const tid=`bp-${slug(n.n)}`;
+    return`<div class="bp-card${n.rep?" rep":""} ${st}" data-cat="best-picture" data-val="${esc(n.n)}" style="border-color:${bc}">
+      <div class="bp-radio" style="${n.rep?"border-color:var(--oswl)":""}"><div class="bp-dot"></div></div>
+      <div class="bp-title">${esc(n.n)}</div>
+      ${n.rep?`<div class="bp-rep-dot" data-tipid="${tid}" data-tip="${esc(n.rep)}"></div>`:""}
+    </div>`;
+  }).join("");
+  const otherHTML=otherCats.map((cat,i)=>{
+    const w=S.winners[cat.id];
+    const done=!!S.picks[cat.id];
+    const noms=cat.noms.map(n=>{
+      const st=nomState(cat.id,n.n);
+      const icon=st==="correct"?"✓":st==="wrong"?"✗":st==="winner"?"★":"";
+      const tid=`${cat.id}-${slug(n.n)}`;
+      return`<li class="nom-item${n.rep?" rep":""} ${st}" data-cat="${cat.id}" data-val="${esc(n.n)}">
+        <div class="radio"><div class="rdot"></div></div>
+        <div class="nom-name">${esc(n.n)}${n.f?`<span class="nom-film"> — ${esc(n.f)}</span>`:""}</div>
+        ${n.rep?`<span class="rep-badge${S.activeTip===tid?" open":""}" data-tipid="${tid}" data-tip="${esc(n.rep)}">◈<span class="tooltip">${esc(n.rep)}</span></span>`:""}
+        ${w?`<span class="result-icon">${icon}</span>`:""}
+      </li>`;
+    }).join("");
+    return`<div class="cat-block${i%2===1?" no-right":""}">
+      <div class="cat-title${done?" done":""}">${esc(cat.title)}</div>
+      <ul class="nom-list">${noms}</ul>
+    </div>`;
+  }).join("");
+  return`<div class="ballot-body">
+    ${S.submitted?`<div class="success-box">✓ Ballot locked in, ${esc(S.myName)}! Switch to the Leaderboard tab to watch scores update live.</div>`:""}
+    <div class="bp-section">
+      <div class="cat-title${S.picks["best-picture"]?" done":""}">Best Picture</div>
+      <div class="bp-grid">${bpCards}</div>
+    </div>
+    <div class="divider"></div>
+    <div class="grid2">${otherHTML}</div>
+    ${!S.submitted&&!locked?`<div class="submit-row">
+      <div class="submit-info">${pickCount===TOTAL_CATS?`All ${TOTAL_CATS} picks made — ready!`:`${TOTAL_CATS-pickCount} categories remaining`}</div>
+      <button class="btn-submit" id="btn-submit"${!pickCount||S.saving?" disabled":""}>${S.saving?"Saving…":`🔒  LOCK IN MY ${pickCount} PICK${pickCount!==1?"S":""}`}</button>
+    </div>`:""}
+  </div>`;
+}
 
-  const cat = CATEGORIES.find(c => c.id === catId);
-  const nominee = cat.nominees.find(n => n.id === nomineeId);
+// ── LEADERBOARD ──
+function renderLeaderboard(rnk,ann){
+  const rows=rnk.length===0?`<div class="lb-empty">No ballots submitted yet.</div>`:rnk.map((e,i)=>{
+    const isMe=e.id===S.myBallotId||(e.name===S.myName&&e.handle===S.myHandle);
+    const medal=i===0?"🏆":i===1?"🥈":i===2?"🥉":(i+1);
+    const pct=ann>0?(e.pts/ann)*100:0;
+    return`<div class="lb-row${isMe?" me":""}">
+      <div class="lb-rank${i<3?" top":""}">${medal}</div>
+      <div class="lb-info">
+        <div class="lb-name-row">
+          <span class="lb-name${isMe?" me":""}">${esc(e.name)}</span>
+          ${isMe?`<span class="lb-you">YOU</span>`:""}
+        </div>
+        ${e.handle?`<div class="lb-handle">${esc(e.platform||"")}: ${esc(e.handle)}</div>`:""}
+        <div class="lb-track"><div class="lb-fill" style="width:${pct}%"></div></div>
+      </div>
+      <div class="lb-score">
+        <div class="lb-pts">${e.pts}</div>
+        <div class="lb-correct">${e.correct}/${ann}</div>
+      </div>
+    </div>`;
+  }).join("");
+  const winnerRows=CATS.filter(c=>S.winners[c.id]).map(c=>`<div class="winner-row">
+    <span class="winner-cat">${esc(c.title)}</span>
+    <span class="winner-name">${esc(S.winners[c.id])}</span>
+  </div>`).join("");
+  return`<div class="lb-body">
+    <div class="lb-title">✦ &nbsp;LEADERBOARD&nbsp; ✦</div>
+    <div class="lb-sub">${ann>0?`${ann}/${TOTAL_CATS} categories announced · auto-refreshes every 30s`:"Waiting for the ceremony to begin…"}</div>
+    <div class="lb-grid">${rows}</div>
+    ${ann>0?`<div class="winners-section"><div class="winners-lbl">ANNOUNCED WINNERS</div><div class="winners-grid">${winnerRows}</div></div>`:""}
+  </div>`;
+}
 
-  btn.disabled = true;
-  btn.textContent = '…';
-  try {
-    await apiFetch('/api/winner', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        categoryId: catId,
-        nomineeId,
-        winnerName: nominee ? nominee.label : nomineeId,
-        password: adminPassword,
-      }),
-    });
-    btn.textContent = 'Saved';
-    btn.classList.add('saved');
-    setTimeout(() => { btn.textContent = 'Save'; btn.classList.remove('saved'); btn.disabled = false; }, 2000);
-    const badge = document.getElementById('admin-badge-' + catId);
-    if (badge) badge.textContent = '★ ' + (nominee ? nominee.label : nomineeId);
-  } catch (e) {
-    btn.textContent = 'Error';
-    btn.disabled = false;
-    if (e.message === 'Incorrect password') {
-      document.getElementById('admin-panel').classList.remove('visible');
-      document.getElementById('admin-login-box').style.display = '';
-      document.getElementById('admin-err').textContent = 'Incorrect password.';
-    }
+// ── ADMIN ──
+function renderAdmin(){
+  if(!S.adminAuth){
+    return`<div class="admin-body">
+      <div class="admin-h">ADMIN — ENTER WINNERS</div>
+      <div style="max-width:380px;">
+        <div class="f-lbl" style="color:rgba(201,168,76,.6)">Password</div>
+        <input id="admin-pw" type="password" class="f-inp" style="background:rgba(255,255,255,.05);color:white;border-color:rgba(201,168,76,.3);" placeholder="Admin password">
+        <div id="admin-err" style="color:#e88;font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;margin-bottom:10px;display:none;"></div>
+        <button class="btn-gold" style="max-width:200px;" onclick="adminLogin()">UNLOCK</button>
+      </div>
+    </div>`;
   }
+  return`<div class="admin-body">
+    <div class="admin-h">ADMIN — ENTER WINNERS</div>
+    ${CATS.map(cat=>`
+      <div class="admin-cat">
+        <div class="admin-cat-lbl">${esc(cat.title)}</div>
+        <div class="admin-row">
+          <select id="adm-${cat.id}" class="admin-sel">
+            <option value="">— Not yet announced —</option>
+            ${cat.noms.map(n=>`<option value="${esc(n.n)}"${S.winners[cat.id]===n.n?" selected":""}>${esc(n.n)}${n.f?" — "+esc(n.f):""}</option>`).join("")}
+          </select>
+          <button id="adm-btn-${cat.id}" class="btn-admin-save" onclick="saveWinner('${cat.id}')">Save</button>
+          ${S.winners[cat.id]?`<span class="admin-won">★ ${esc(S.winners[cat.id])}</span>`:""}
+        </div>
+      </div>
+    `).join("")}
+  </div>`;
 }
 
-// ── BOOT ───────────────────────────────────────────────────────
-init();
+// ── RENDER ──
+function render(){
+  document.getElementById("app").innerHTML=S.page==="entry"?renderEntry():renderMain();
+  bindEvents();
+}
+
+// ── EVENTS ──
+let footClicks=0,footTimer=null;
+function bindEvents(){
+  const btnEnter=document.getElementById("btn-enter");
+  if(btnEnter)btnEnter.addEventListener("click",handleEntry);
+  ["inp-name","inp-handle","inp-platform"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    el.addEventListener("input",e=>{
+      if(id==="inp-name")S.name=e.target.value;
+      if(id==="inp-handle")S.handle=e.target.value;
+      if(id==="inp-platform")S.platform=e.target.value;
+    });
+    if(id!=="inp-platform")el.addEventListener("keydown",e=>{if(e.key==="Enter")handleEntry();});
+  });
+  document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{S.page=t.dataset.tab;render();}));
+  const btnFetch=document.getElementById("btn-fetch");
+  if(btnFetch)btnFetch.addEventListener("click",refreshResults);
+  const btnSub=document.getElementById("btn-submit");
+  if(btnSub)btnSub.addEventListener("click",saveBallot);
+  document.querySelectorAll(".nom-item[data-cat]").forEach(el=>{
+    el.addEventListener("click",e=>{
+      if(S.submitted||isLocked())return;
+      if(e.target.closest(".rep-badge"))return;
+      const cat=el.dataset.cat,val=el.dataset.val;
+      if(S.picks[cat]===val)delete S.picks[cat];else S.picks[cat]=val;
+      S.activeTip=null;saveLocal();render();
+    });
+  });
+  document.querySelectorAll(".bp-card[data-cat]").forEach(el=>{
+    el.addEventListener("click",e=>{
+      if(S.submitted||isLocked())return;
+      if(e.target.closest(".bp-rep-dot"))return;
+      const cat=el.dataset.cat,val=el.dataset.val;
+      if(S.picks[cat]===val)delete S.picks[cat];else S.picks[cat]=val;
+      S.activeTip=null;saveLocal();render();
+    });
+  });
+  document.querySelectorAll(".rep-badge,.bp-rep-dot").forEach(el=>{
+    el.addEventListener("click",e=>{
+      e.stopPropagation();
+      const id=el.dataset.tipid;
+      S.activeTip=S.activeTip===id?null:id;
+      render();
+    });
+  });
+  // Footer logo: click 5x to reveal admin tab
+  const footLogo=document.getElementById("foot-logo");
+  if(footLogo)footLogo.addEventListener("click",()=>{
+    footClicks++;
+    clearTimeout(footTimer);
+    footTimer=setTimeout(()=>{footClicks=0;},2000);
+    if(footClicks>=5){S.adminTabVisible=true;S.page="admin";footClicks=0;render();}
+  });
+  // Admin pw enter key
+  const adminPw=document.getElementById("admin-pw");
+  if(adminPw)adminPw.addEventListener("keydown",e=>{if(e.key==="Enter")adminLogin();});
+}
+
+function handleEntry(){
+  S.name=(document.getElementById("inp-name")||{}).value||S.name;
+  S.handle=(document.getElementById("inp-handle")||{}).value||S.handle;
+  S.platform=(document.getElementById("inp-platform")||{}).value||S.platform;
+  if(!S.name.trim()){S.err="Please enter your name.";render();return;}
+  if(!S.handle.trim()){S.err="Please enter your social handle.";render();return;}
+  S.err="";S.myName=S.name.trim();S.myHandle=S.handle.trim();S.myPlatform=S.platform;
+  saveLocal();
+  S.page=isLocked()?"leaderboard":"ballot";
+  render();
+}
+
+// ── INIT ──
+restoreLocal();
+loadShared().then(()=>render());
+// Also handle #admin hash
+window.addEventListener("hashchange",()=>{
+  if(location.hash==="#admin"){S.adminTabVisible=true;S.page="admin";render();}
+});
 </script>
 </body>
 </html>
